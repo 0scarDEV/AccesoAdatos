@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CadenaHotelera nombre="SOL CONFORT" cif="AB237237287">
+    <Hotel id="1">
+        <Nombre>Sancho</Nombre>
+        <Telefonos>34567654 45345322</Telefonos>
+        <Direccion>
+            <Calle>Sol</Calle>
+            <Numero>3</Numero>
+            <CodigoPostal>98888</CodigoPostal>
+        </Direccion>
+    </Hotel>
+    <Hotel id="2">
+        <Nombre>Quijote</Nombre>
+        <Telefonos>68768668 67487335 24324242</Telefonos>
+        <Direccion>
+            <Calle>Luna</Calle>
+            <Numero>5</Numero>
+            <CodigoPostal>55555</CodigoPostal>
+        </Direccion>
+    </Hotel>
+    <Hotel id="3">
+        <Nombre>Dulcinaea</Nombre>
+        <Direccion>
+            <Calle>Estrella</Calle>
+            <Numero>6</Numero>
+            <CodigoPostal>66666</CodigoPostal>
+        </Direccion>
+    </Hotel>
+</CadenaHotelera>

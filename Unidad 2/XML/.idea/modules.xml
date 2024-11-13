@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/A1UD2DOM_OscarFernandezPastoriza/A1UD2DOM_OscarFernandezPastoriza.iml" filepath="$PROJECT_DIR$/A1UD2DOM_OscarFernandezPastoriza/A1UD2DOM_OscarFernandezPastoriza.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A2UD2SAX_OscarFernandezPastoriza/A2UD2SAX_OscarFernandezPastoriza.iml" filepath="$PROJECT_DIR$/A2UD2SAX_OscarFernandezPastoriza/A2UD2SAX_OscarFernandezPastoriza.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A3UD2Transformaciones_FernandezPastorizaOscar/A3UD2Transformaciones_FernandezPastorizaOscar.iml" filepath="$PROJECT_DIR$/A3UD2Transformaciones_FernandezPastorizaOscar/A3UD2Transformaciones_FernandezPastorizaOscar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A4UD2REPASOVinculación_FernandezPastorizaOscar/A4UD2REPASOVinculación_FernandezPastorizaOscar.iml" filepath="$PROJECT_DIR$/A4UD2REPASOVinculación_FernandezPastorizaOscar/A4UD2REPASOVinculación_FernandezPastorizaOscar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A4UD2Vinculación_FernandezPastorizaOscar/A4UD2Vinculación_FernandezPastorizaOscar.iml" filepath="$PROJECT_DIR$/A4UD2Vinculación_FernandezPastorizaOscar/A4UD2Vinculación_FernandezPastorizaOscar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ACTIV3UD2XPATH_FernandezPastorizaOscar/ACTIV3UD2XPATH_FernandezPastorizaOscar.iml" filepath="$PROJECT_DIR$/ACTIV3UD2XPATH_FernandezPastorizaOscar/ACTIV3UD2XPATH_FernandezPastorizaOscar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ACTIVREPASOUD2DOMYSAX_FERNANDEZPASTORIZAOSCAR/ACTIVREPASOUD2DOMYSAX_FERNANDEZPASTORIZAOSCAR.iml" filepath="$PROJECT_DIR$/ACTIVREPASOUD2DOMYSAX_FERNANDEZPASTORIZAOSCAR/ACTIVREPASOUD2DOMYSAX_FERNANDEZPASTORIZAOSCAR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/XML.iml" filepath="$PROJECT_DIR$/.idea/XML.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,25 @@
+Calleja,Luis Calle López,10/10/1990,Tarta de Manzana,Solomillo con setas
+Carmela,Carmen Álvarez Pérez,13/02/1988,Filloas,Lubina a la sal,Lasaña
+Marinero,María Marín López,24/03/1985,Paella Valenciana,Empanada de Atún, Rape a la Americana
+Chocolate,Raúl Pérez Sánchez,05/07/1990,Flan de Huevo,Croquetas de Jamón
+Garci,Esteban García Ríos,15/11/1988,Pulpo a la Gallega,Cochinillo Asado,Tortilla Española
+Martinico,José Rodríguez Martín,19/08/1980,Gazpacho Andaluz,Arroz con Bogavante, Flan de café, Sopa de Ajo
+Castilla,Pedro Gómez Iglesias,02/05/1988,Cordero Asado,Sopa de Ajo,Calamares en su Tinta,Salpicón de mariscos,Chipirones rellenos
+Gallego,Antonio López Fernández,07/09/1991,Fabada Asturiana,Tarta de Santiago
+Soleada,Lucía Fernández Ruiz,22/12/1994,Salmorejo,Empanada de Atún
+Cocinillas,Isabel Díaz Sánchez,14/01/1988,Tortilla Española,Solomillo al Whisky,Flan de Huevo
+Bravo,Manuel Jiménez Torres,08/10/1980,Paella Valenciana,Gazpacho Andaluz
+Pirueta,Adriana López Vega,21/06/1992,Calamares en su Tinta,Bacalao a la Vizcaína,Rape a la brasa
+Pablete,Pablo Fernández Castillo,27/11/1989,Arroz con Bogavante,Salmorejo
+Ratoncita,Susana Martín González,11/04/1985,Cochinillo Asado,Crema Catalana,Filloas Gallegas,Pargo al horno
+Montaña,Francisco González Muñoz,03/09/1986,Pulpo a la Gallega,Fabada Asturiana
+Canela,Rocío Hernández Pérez,30/07/1984,Lubina a la Sal,Tarta de Santiago,Flan de Huevo
+Sierra,Diego Martín Castro,26/05/1987,Empanada de Atún,Croquetas de Jamón,Cordero Asado
+Marisma,Marta Blanco López,05/02/1990,Sopa de Ajo,Tarta de Santiago, Salmorejo
+Lucero,David Romero Ortega,18/09/1992,Gazpacho Andaluz,Solomillo al Whisky
+Morenito,Ángela Ruiz Moreno,23/08/1985,Tarta de Santiago,Pulpo a la Gallega,Filloas Gallegas,Leche Frita
+Danielico,Daniel Sánchez Díaz,09/03/1991,Paella Valenciana,Calamares en su Tinta
+Navarrete,Cristina Navarro García,12/06/1990,Cordero Asado,Flan de Huevo
+Castillejo,Laura Castillo Gómez,07/07/1986,Crema Catalana,Bacalao a la Vizcaína
+Ortizo,Jaime Moreno Ortiz,11/10/1994,Fabada Asturiana,Sopa de Ajo,Empanada de Atún,Helado de Pistacho,Cheesecake,Trufas de Chocolate
+Silvano,Álvaro Hernández Silva,29/11/1988,Tortilla Española,Croquetas de Jamón,Paella Valenciana,Panna Cotta,Pastel de Almendra

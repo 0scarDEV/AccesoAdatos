@@ -1,0 +1,81 @@
+
+Cocineros con Edad 19
+Código	Apodo (Nombre)
+1	pato (Oscar Fernandez Pastoriza)
+2	roco (Alvaro Raez Gallego)
+3	gaston (Jorge Lara Esquivel)
+4	kesto (Iker Garcia Nuñez)
+--------------------------------------------------------------
+
+Cocineros con Edad 29
+Código	Apodo (Nombre)
+13	Soleada (Lucía Fernández Ruiz)
+--------------------------------------------------------------
+
+Cocineros con Edad 30
+Código	Apodo (Nombre)
+28	Ortizo (Jaime Moreno Ortiz)
+--------------------------------------------------------------
+
+Cocineros con Edad 32
+Código	Apodo (Nombre)
+16	Pirueta (Adriana López Vega)
+23	Lucero (David Romero Ortega)
+--------------------------------------------------------------
+
+Cocineros con Edad 33
+Código	Apodo (Nombre)
+12	Gallego (Antonio López Fernández)
+25	Danielico (Daniel Sánchez Díaz)
+--------------------------------------------------------------
+
+Cocineros con Edad 34
+Código	Apodo (Nombre)
+5	Calleja (Luis Calle López)
+8	Chocolate (Raúl Pérez Sánchez)
+17	Pablete (Pablo Fernández Castillo)
+22	Marisma (Marta Blanco López)
+26	Navarrete (Cristina Navarro García)
+--------------------------------------------------------------
+
+Cocineros con Edad 35
+Código	Apodo (Nombre)
+9	Garci (Esteban García Ríos)
+29	Silvano (Álvaro Hernández Silva)
+--------------------------------------------------------------
+
+Cocineros con Edad 36
+Código	Apodo (Nombre)
+6	Carmela (Carmen Álvarez Pérez)
+11	Castilla (Pedro Gómez Iglesias)
+14	Cocinillas (Isabel Díaz Sánchez)
+--------------------------------------------------------------
+
+Cocineros con Edad 37
+Código	Apodo (Nombre)
+21	Sierra (Diego Martín Castro)
+--------------------------------------------------------------
+
+Cocineros con Edad 38
+Código	Apodo (Nombre)
+19	Montaña (Francisco González Muñoz)
+27	Castillejo (Laura Castillo Gómez)
+--------------------------------------------------------------
+
+Cocineros con Edad 39
+Código	Apodo (Nombre)
+7	Marinero (María Marín López)
+18	Ratoncita (Susana Martín González)
+24	Morenito (Ángela Ruiz Moreno)
+--------------------------------------------------------------
+
+Cocineros con Edad 40
+Código	Apodo (Nombre)
+20	Canela (Rocío Hernández Pérez)
+--------------------------------------------------------------
+
+Cocineros con Edad 44
+Código	Apodo (Nombre)
+10	Martinico (José Rodríguez Martín)
+15	Bravo (Manuel Jiménez Torres)
+--------------------------------------------------------------

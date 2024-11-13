@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<!DOCTYPE Actores SYSTEM "src/EJ1_A2UD2/actores.dtd">
+<Actores>-->
+
+<Actores xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="Actores.xsd">
+    <Actor id="51">
+        <Nome>Elisabeth Shue</Nome>
+        <Sexo>muller</Sexo>
+        <DataNacemento formato="dd/mm/aaaa">06/10/1963</DataNacemento>
+    </Actor>
+    <Actor id="139">
+        <Nome>Jhonny Depp</Nome>
+        <Sexo>home</Sexo>
+        <DataNacemento formato="dd/mm/aaaa">09/06/1963</DataNacemento>
+    </Actor>
+    <Actor id="100">
+        <Nome>Harrison Ford</Nome>
+        <Sexo>home</Sexo>
+        <DataNacemento formato="dd/mm/aaaa">13/07/1943</DataNacemento>
+    </Actor>
+    <Actor id="101">
+        <Nome>Jhonny Depp</Nome>
+        <Sexo>home</Sexo>
+        <DataNacemento formato="dd/mm/aaaa">11/11/1111</DataNacemento>
+    </Actor>
+</Actores>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<empresa cif="A58818501">
+    <nombre>TECNOMUR S.L.</nombre>
+    <empleados>
+        <empleado>
+            <dni>12345678C</dni>
+            <nombre>Carlos Pérez Ruiz</nombre>
+            <edad>29</edad>
+        </empleado>
+        <empleado>
+            <dni>87654321C</dni>
+            <nombre>Claudia Ortiz Zaldo</nombre>
+            <edad>31</edad>
+        </empleado>
+        <empleado>
+            <dni>876543225T</dni>
+            <nombre>Carlos Pérez Pérez</nombre>
+            <edad>30</edad>
+        </empleado>
+    </empleados>
+</empresa>

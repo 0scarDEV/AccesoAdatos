@@ -1,0 +1,17 @@
+
+Actores
+-----------------------------
+Actor id 51
+Nome:Elisabeth Shue
+Sexo:muller
+DataNacemento formato dd/mm/aaaa:06/10/1963
+-----------------------------
+Actor id 139
+Nome:Jhonny Depp
+Sexo:home
+DataNacemento formato dd/mm/aaaa:09/06/1963
+-----------------------------
+Actor id 100
+Nome:Harrison Ford
+Sexo:home
+DataNacemento formato dd/mm/aaaa:13/07/1943

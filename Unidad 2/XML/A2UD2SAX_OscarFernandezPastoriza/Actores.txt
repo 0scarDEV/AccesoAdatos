@@ -1,0 +1,725 @@
+Información de actores
+======================Actores: 
+    
+Actor 1
+**************
+id: 51
+        Nome: Elisabeth Shue
+        Sexo: muller
+        DataNacemento: 06/10/1963
+    
+------------------------------
+    
+Actor 2
+**************
+id: 139
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 09/06/1963
+    
+------------------------------
+    
+Actor 3
+**************
+id: 100
+        Nome: Harrison Ford
+        Sexo: home
+        DataNacemento: 13/07/1943
+    
+------------------------------
+    
+Actor 4
+**************
+id: 101
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 11/11/1111
+    
+------------------------------
+
+Total de actores: 4Información de actores
+======================Actores: 
+    
+Actor 1
+**************
+id: 51
+        Nome: Elisabeth Shue
+        Sexo: muller
+        DataNacemento: 06/10/1963
+    
+------------------------------
+    
+Actor 2
+**************
+id: 139
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 09/06/1963
+    
+------------------------------
+    
+Actor 3
+**************
+id: 100
+        Nome: Harrison Ford
+        Sexo: home
+        DataNacemento: 13/07/1943
+    
+------------------------------
+    
+Actor 4
+**************
+id: 101
+        Sexo: home
+        Nome: Jhonny Depp
+        DataNacemento: 11/11/1111
+    
+------------------------------
+
+Total de actores: 4Información de actores
+======================Actores: 
+    
+Actor 1
+**************
+id: 51
+        Nome: Elisabeth Shue
+        Sexo: muller
+        DataNacemento: 06/10/1963
+    
+------------------------------
+    
+Actor 2
+**************
+id: 139
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 09/06/1963
+    
+------------------------------
+    
+Actor 3
+**************
+id: 100
+        Nome: Harrison Ford
+        Sexo: home
+        DataNacemento: 13/07/1943
+    
+------------------------------
+    
+Actor 4
+**************
+id: 101
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 11/11/1111
+    
+------------------------------
+
+Total de actores: 4Información de actores
+======================Actores: 
+    
+Actor 1
+**************
+id: 51
+        Nome: Elisabeth Shue
+        Sexo: muller
+        DataNacemento: 06/10/1963
+    
+------------------------------
+    
+Actor 2
+**************
+id: 139
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 09/06/1963
+    
+------------------------------
+    
+Actor 3
+**************
+id: 100
+        Nome: Harrison Ford
+        Sexo: home
+        DataNacemento: 13/07/1943
+    
+------------------------------
+    
+Actor 4
+**************
+id: 101
+        Nome: Jhonny Depp
+        Sexo: home
+        Sexo: home
+        DataNacemento: 11/11/1111
+    
+------------------------------
+
+Total de actores: 4Información de actores
+======================Actores: 
+    
+Actor 1
+**************
+id: 51
+        Nome: Elisabeth Shue
+        Sexo: muller
+        DataNacemento: 06/10/1963
+    
+------------------------------
+    
+Actor 2
+**************
+id: 139
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 09/06/1963
+    
+------------------------------
+    
+Actor 3
+**************
+id: 100
+        Nome: Harrison Ford
+        Sexo: home
+        DataNacemento: 13/07/1943
+    
+------------------------------
+    
+Actor 4
+**************
+id: 101
+        Sexo: home
+        Nome: Jhonny Depp
+        DataNacemento: 11/11/1111
+    
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+    
+Actor 1
+**************
+id: 51
+        Nome: Elisabeth Shue
+        Sexo: muller
+        DataNacemento: 06/10/1963
+    
+------------------------------
+    
+Actor 2
+**************
+id: 139
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 09/06/1963
+    
+------------------------------
+    
+Actor 3
+**************
+id: 100
+        Nome: Harrison Ford
+        Sexo: home
+        DataNacemento: 13/07/1943
+    
+------------------------------
+    
+Actor 4
+**************
+id: 101
+        Sexo: home
+        Nome: Jhonny Depp
+        DataNacemento: 11/11/1111
+    
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+    
+Actor 1
+**************
+id: 51
+        Nome: Elisabeth Shue
+        Sexo: muller
+        DataNacemento: 06/10/1963
+    
+------------------------------
+    
+Actor 2
+**************
+id: 139
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 09/06/1963
+    
+------------------------------
+    
+Actor 3
+**************
+id: 100
+        Nome: Harrison Ford
+        Sexo: home
+        DataNacemento: 13/07/1943
+    
+------------------------------
+    
+Actor 4
+**************
+id: 101
+        Sexo: home
+        Nome: Jhonny Depp
+        DataNacemento: 11/11/1111
+    
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51Nome: Elisabeth ShueSexo: mullerDataNacemento: 06/10/1963
+------------------------------
+Actor 2
+**************
+id: 139Nome: Jhonny DeppSexo: homeDataNacemento: 09/06/1963
+------------------------------
+Actor 3
+**************
+id: 100Nome: Harrison FordSexo: homeDataNacemento: 13/07/1943
+------------------------------
+Actor 4
+**************
+id: 101Sexo: homeNome: Jhonny DeppDataNacemento: 11/11/1111
+------------------------------
+Total de actores: 4Información de actores
+======================
+Actores
+    
+Actor 1
+**************
+id: 51
+        Nome: Elisabeth Shue
+        Sexo: muller
+        DataNacemento: 06/10/1963
+    
+------------------------------
+    
+Actor 2
+**************
+id: 139
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 09/06/1963
+    
+------------------------------
+    
+Actor 3
+**************
+id: 100
+        Nome: Harrison Ford
+        Sexo: home
+        DataNacemento: 13/07/1943
+    
+------------------------------
+    
+Actor 4
+**************
+id: 101
+        Sexo: home
+        Nome: Jhonny Depp
+        DataNacemento: 11/11/1111
+    
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+    
+Actor 1
+**************
+id: 51
+        Nome: Elisabeth Shue
+        Sexo: muller
+        DataNacemento: 06/10/1963
+    
+------------------------------
+    
+Actor 2
+**************
+id: 139
+        Nome: Jhonny Depp
+        Sexo: home
+        DataNacemento: 09/06/1963
+    
+------------------------------
+    
+Actor 3
+**************
+id: 100
+        Nome: Harrison Ford
+        Sexo: home
+        DataNacemento: 13/07/1943
+    
+------------------------------
+    
+Actor 4
+**************
+id: 101
+        Sexo: home
+        Nome: Jhonny Depp
+        DataNacemento: 11/11/1111
+    
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51Nome: Elisabeth ShueSexo: mullerDataNacemento: 06/10/1963
+------------------------------
+Actor 2
+**************
+id: 139Nome: Jhonny DeppSexo: homeDataNacemento: 09/06/1963
+------------------------------
+Actor 3
+**************
+id: 100Nome: Harrison FordSexo: homeDataNacemento: 13/07/1943
+------------------------------
+Actor 4
+**************
+id: 101Sexo: homeNome: Jhonny DeppDataNacemento: 11/11/1111
+------------------------------
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51Nome: Elisabeth ShueSexo: mullerDataNacemento: 06/10/1963
+------------------------------
+Actor 2
+**************
+id: 139Nome: Jhonny DeppSexo: homeDataNacemento: 09/06/1963
+------------------------------
+Actor 3
+**************
+id: 100Nome: Harrison FordSexo: homeDataNacemento: 13/07/1943
+------------------------------
+Actor 4
+**************
+id: 101Nome: Jhonny DeppSexo: homeDataNacemento: 11/11/1111
+------------------------------
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51
+Nome: Elisabeth ShueSexo: mullerDataNacemento: 06/10/1963
+------------------------------
+Actor 2
+**************
+id: 139
+Nome: Jhonny DeppSexo: homeDataNacemento: 09/06/1963
+------------------------------
+Actor 3
+**************
+id: 100
+Nome: Harrison FordSexo: homeDataNacemento: 13/07/1943
+------------------------------
+Actor 4
+**************
+id: 101
+Nome: Jhonny DeppSexo: homeDataNacemento: 11/11/1111
+------------------------------
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51
+Nome: Elisabeth Shue
+Sexo: muller
+DataNacemento: 06/10/1963
+
+------------------------------
+Actor 2
+**************
+id: 139
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 09/06/1963
+
+------------------------------
+Actor 3
+**************
+id: 100
+Nome: Harrison Ford
+Sexo: home
+DataNacemento: 13/07/1943
+
+------------------------------
+Actor 4
+**************
+id: 101
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 11/11/1111
+
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51
+Nome: Elisabeth Shue
+Sexo: muller
+DataNacemento: 06/10/1963
+
+------------------------------
+Actor 2
+**************
+id: 139
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 09/06/1963
+
+------------------------------
+Actor 3
+**************
+id: 100
+Nome: Harrison Ford
+Sexo: home
+DataNacemento: 13/07/1943
+
+------------------------------
+Actor 4
+**************
+id: 101
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 11/11/1111
+
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51
+Nome: Elisabeth Shue
+Sexo: muller
+DataNacemento: 06/10/1963
+
+------------------------------
+Actor 2
+**************
+id: 139
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 09/06/1963
+
+------------------------------
+Actor 3
+**************
+id: 100
+Nome: Harrison Ford
+Sexo: home
+DataNacemento: 13/07/1943
+
+------------------------------
+Actor 4
+**************
+id: 101
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 11/11/1111
+
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51
+Nome: Elisabeth Shue
+Sexo: muller
+DataNacemento: 06/10/1963
+
+------------------------------
+Actor 2
+**************
+id: 139
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 09/06/1963
+
+------------------------------
+Actor 3
+**************
+id: 100
+Nome: Harrison Ford
+Sexo: home
+DataNacemento: 13/07/1943
+
+------------------------------
+Actor 4
+**************
+id: 101
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 11/11/1111
+
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51
+Nome: Elisabeth Shue
+Sexo: muller
+DataNacemento: 06/10/1963
+
+------------------------------
+Actor 2
+**************
+id: 139
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 09/06/1963
+
+------------------------------
+Actor 3
+**************
+id: 100
+Nome: Harrison Ford
+Sexo: home
+DataNacemento: 13/07/1943
+
+------------------------------
+Actor 4
+**************
+id: 101
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 11/11/1111
+
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51
+Nome: Elisabeth Shue
+Sexo: muller
+DataNacemento: 06/10/1963
+
+------------------------------
+Actor 2
+**************
+id: 139
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 09/06/1963
+
+------------------------------
+Actor 3
+**************
+id: 100
+Nome: Harrison Ford
+Sexo: home
+DataNacemento: 13/07/1943
+
+------------------------------
+Actor 4
+**************
+id: 101
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 11/11/1111
+
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51
+Nome: Elisabeth Shue
+Sexo: muller
+DataNacemento: 06/10/1963
+
+------------------------------
+Actor 2
+**************
+id: 139
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 09/06/1963
+
+------------------------------
+Actor 3
+**************
+id: 100
+Nome: Harrison Ford
+Sexo: home
+DataNacemento: 13/07/1943
+
+------------------------------
+Actor 4
+**************
+id: 101
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 11/11/1111
+
+------------------------------
+
+Total de actores: 4Información de actores
+======================
+Actores
+Actor 1
+**************
+id: 51
+Nome: Elisabeth Shue
+Sexo: muller
+DataNacemento: 06/10/1963
+
+------------------------------
+Actor 2
+**************
+id: 139
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 09/06/1963
+
+------------------------------
+Actor 3
+**************
+id: 100
+Nome: Harrison Ford
+Sexo: home
+DataNacemento: 13/07/1943
+
+------------------------------
+Actor 4
+**************
+id: 101
+Nome: Jhonny Depp
+Sexo: home
+DataNacemento: 11/11/1111
+
+------------------------------
+
+Total de actores: 4

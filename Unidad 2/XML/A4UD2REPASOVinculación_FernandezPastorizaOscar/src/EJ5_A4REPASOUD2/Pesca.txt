@@ -1,0 +1,82 @@
+La especie Robaliza tiene un valor alto
+	Captura mínima: 36.0cm
+	Otros Nombres:
+		-Lubina
+	Notas: 
+		-Puede llegar a penetrar en aguas dulces
+
+La especie Sargo tiene un valor alto
+	Captura mínima: 15.0cm
+	Otros Nombres:
+		-Ninguno.
+	Notas: 
+		-Os exemplares novos viven en bancos, volvéndose solitarios ó facerse maiores
+
+La especie Congrio tiene un valor baixo
+	Captura mínima: 58.0cm
+	Otros Nombres:
+		-Ninguno.
+	Notas: 
+		-A parte final do seu corpo non se come, pois ten moitas espiñas.
+		-Sempre sae comer pola noite, e polo día agóchase en gretas e buracos.
+
+La especie Pinto tiene un valor medio
+	Captura mínima: 35.0cm
+	Otros Nombres:
+		-Ninguno.
+	Notas: 
+		-Son hermafroditas proterogínicos. Comezan o seu crecemento como femias para transformarse posteriormente en machos
+		-Presenta unha ámplia gama cromática, en xeral adaptada o seu entorno
+
+La especie Polbo tiene un valor alto
+	Captura mínima: 1.0kg
+	Otros Nombres:
+		-Pulpo
+	Notas: 
+		-As especies mais grandes poden chegar a 6 metros e 70 kgs.
+		-O terceiro brazo dereito do macho é realmente un órgano copulador
+		-Son moluscos
+		-Considéranse os invertebrados de maior intelixencia
+
+La especie Choco tiene un valor medio
+	Captura mínima: 20.0cm
+	Otros Nombres:
+		-Sepia
+	Notas: 
+		-Cando se ven ameazados soltan un chorro de tinta
+
+La especie Troita tiene un valor null
+	Captura mínima: 21.0cm
+	Otros Nombres:
+		-Trucha
+	Notas: 
+		-Ninguna
+
+Xornada día: 2020-05-21 (Lugar - Cabicastro)
+Descrición: Ninguna.
+	Capturas:
+		-Ninguna.
+
+Xornada día: 20020-05-27 (Lugar - Lagos)
+Descrición: A auga estaba fría e turbia. A visibilidade era de 2 metros.
+	Capturas:
+		- Captura de: Pinto, Unidades: 3, Peso: 5.0
+		- Captura de: Pulpo, Unidades: 1, Peso: 1.7
+
+Xornada día: 2020-07-07 (Lugar - Illa do santo)
+Descrición: Un día moi agradable para a pesca con boa visibilidade. A auga estaba especialmente quente.        
+	Capturas:
+		- Captura de: Congrio, Unidades: 1, Peso: 7.5
+		- Captura de: Sargo, Unidades: 5, Peso: 2.3
+		- Captura de: Robaliza, Unidades: 1, Peso: 1.2
+
+Xornada día: 2020-08-30 (Lugar - Con negro)
+Descrición: Ninguna.
+	Capturas:
+		- Captura de: Pulpo, Unidades: 2, Peso: 4.8
+
+Xornada día: 2020-09-03 (Lugar - Area de Bon)
+Descrición: Aínda que o mar esta en calma, non se vía nada.
+	Capturas:
+		-Ninguna.
+

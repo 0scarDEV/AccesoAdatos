@@ -1,0 +1,8 @@
+1-PEDRO GONZALEZ -----> se creo correctamente el directorio
+2-LUCIA PEREZ -----> se creo correctamente el directorio
+1-JUAN ALVAREZ -----> se creo correctamente el directorio
+1-JOSE GONZALEZ -----> se creo correctamente el directorio
+2-ANA ALBA -----> se creo correctamente el directorio
+1-FEDERICO LOPEZ -----> se creo correctamente el directorio
+DAM2/JOSE ESTEVEZ -----> no tiene el formato CURSO/NUMERO/ALUMNO
+3-FELIX ALBAR -----> se creo correctamente el directorio

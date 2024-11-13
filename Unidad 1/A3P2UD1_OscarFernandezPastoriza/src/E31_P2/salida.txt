@@ -1,0 +1,2 @@
+El archivo "src\E31_P2\5lineas.txt" tiene 5 líneas.
+El archivo "src\E31_P2\salida.txt" tiene 0 líneas.
