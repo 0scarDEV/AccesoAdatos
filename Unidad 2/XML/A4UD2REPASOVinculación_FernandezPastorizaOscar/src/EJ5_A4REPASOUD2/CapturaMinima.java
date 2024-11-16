@@ -1,10 +1,8 @@
 package EJ5_A4REPASOUD2;
 
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlValue;
 
-@XmlRootElement (name = "CapturaMinima")
 public class CapturaMinima {
     private String unidade;
     private double valor;

@@ -3,7 +3,6 @@ package EJ5_A4REPASOUD2;
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 
-@XmlRootElement (name = "Especie")
 @XmlType(propOrder = {"nome", "valor", "habitat", "nomeCientifico", "outrosNomes", "capturaMinima", "notas"})
 public class Especie {
     private String nome;

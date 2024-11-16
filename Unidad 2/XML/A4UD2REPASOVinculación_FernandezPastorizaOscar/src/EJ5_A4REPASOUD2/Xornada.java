@@ -2,10 +2,8 @@ package EJ5_A4REPASOUD2;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 
-@XmlRootElement (name = "Xornada")
 public class Xornada {
     private String lugar;
     private String data;
