@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<CadenaHotelera nombre="SOL CONFORT" cif="AB237237287">
+<CadenaHotelera nombre="SOL CONFORT" CIF="AB237237287">
     <Hotel id="1">
         <Nombre>Sancho</Nombre>
         <Telefonos>34567654 45345322</Telefonos>

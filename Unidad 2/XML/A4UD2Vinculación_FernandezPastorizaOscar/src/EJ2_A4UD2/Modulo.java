@@ -6,10 +6,7 @@ import java.util.ArrayList;
 @XmlRootElement(name = "Modulo")
 @XmlType(propOrder = {"nombre", "bloquesDeContenidos"})
 public class Modulo {
-    @XmlElement(name = "Nome")
     private String nombre;
-    @XmlElementWrapper(name = "Contidos")
-    @XmlElement(name = "Bloque")
     private ArrayList<BloqueContenidos> bloquesDeContenidos;
 
     public Modulo() {
@@ -22,6 +19,16 @@ public class Modulo {
 
     public void setBloquesDeContenidos(ArrayList<BloqueContenidos> bloquesDeContenidos) {
         this.bloquesDeContenidos = bloquesDeContenidos;
+    }
+
+    @XmlElement(name = "Nome")
+    public String getNombre() {
+        return nombre;
+    }
+
+    @XmlElementWrapper(name = "Contidos")
+    @XmlElement(name = "Bloque")    public ArrayList<BloqueContenidos> getBloquesDeContenidos() {
+        return bloquesDeContenidos;
     }
 
     @Override public String toString() {

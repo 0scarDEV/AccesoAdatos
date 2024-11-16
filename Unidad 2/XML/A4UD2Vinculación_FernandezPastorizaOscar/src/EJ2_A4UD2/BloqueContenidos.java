@@ -6,18 +6,12 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder = {"numSesions", "num", "titulo", "descripcion"})
 public class BloqueContenidos {
-    @XmlAttribute(name = "num")
     private int num;
-    @XmlElement(name = "Titulo")
     private String titulo;
-    @XmlElement(name = "Descripcion")
     private String descripcion;
-    @XmlAttribute(name = "sesions")
     private int numSesions;
 
-    public BloqueContenidos() {
-
-    }
+    public BloqueContenidos() {}
 
     public void setNum(int num) {
         this.num = num;
@@ -33,6 +27,26 @@ public class BloqueContenidos {
 
     public void setNumSesions(int numSesions) {
         this.numSesions = numSesions;
+    }
+
+    @XmlAttribute(name = "num")
+    public int getNum() {
+        return num;
+    }
+
+    @XmlElement(name = "Titulo")
+    public String getTitulo() {
+        return titulo;
+    }
+
+    @XmlElement(name = "Descripcion")
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    @XmlAttribute(name = "sesions")
+    public int getNumSesions() {
+        return numSesions;
     }
 
     @Override public String toString() {

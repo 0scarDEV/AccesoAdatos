@@ -3,15 +3,10 @@ package EJ3_A4UD2;
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 
-@XmlRootElement(name = "Trabajador")
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"compania", "cargo", "sueldo"})
+@XmlType(propOrder = {"compania", "sueldo", "cargo"})
 public class Trabajador extends Persona {
-    @XmlElement(name = "Empresa")
     private String compania;
-    @XmlElement(name = "Salario")
     private double sueldo;
-    @XmlElement(name = "Puesto")
     private String cargo;
 
     public Trabajador() {
@@ -25,6 +20,7 @@ public class Trabajador extends Persona {
         this.cargo = cargo;
     }
 
+    @XmlElement(name = "Empresa")
     public String getCompania() {
         return compania;
     }
@@ -33,6 +29,7 @@ public class Trabajador extends Persona {
         this.compania = compania;
     }
 
+    @XmlElement(name = "Salario")
     public double getSueldo() {
         return sueldo;
     }
@@ -41,6 +38,7 @@ public class Trabajador extends Persona {
         this.sueldo = sueldo;
     }
 
+    @XmlElement(name = "Puesto")
     public String getCargo() {
         return cargo;
     }

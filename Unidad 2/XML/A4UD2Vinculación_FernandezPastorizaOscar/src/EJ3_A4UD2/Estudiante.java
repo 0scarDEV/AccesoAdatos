@@ -3,13 +3,9 @@ package EJ3_A4UD2;
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 
-@XmlRootElement(name = "Estudiante")
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Estudiante")
+@XmlType(name = "Estudiante", propOrder = {"universidad", "carrera"})
 public class Estudiante extends Persona {
-    @XmlElement(name = "Universidad")
     private String universidad;
-    @XmlElement(name = "Carrera")
     private String carrera;
 
     public Estudiante() {
@@ -22,6 +18,7 @@ public class Estudiante extends Persona {
         this.carrera = carrera;
     }
 
+    @XmlElement(name = "Universidad")
     public String getUniversidad() {
         return universidad;
     }
@@ -30,6 +27,7 @@ public class Estudiante extends Persona {
         this.universidad = universidad;
     }
 
+    @XmlElement(name = "Carrera")
     public String getCarrera() {
         return carrera;
     }

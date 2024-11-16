@@ -3,28 +3,27 @@ package EJ1_A4UD2;
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 
-@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "empresa")
 @XmlType(propOrder = {"cif", "nombre", "empleados"})
 public class Empresa {
-    @XmlAttribute()
     private String cif;
-    @XmlElement(name = "nombre")
     private String nombre;
-    @XmlElementWrapper(name = "empleados")
-    @XmlElement(name = "empleado")
     private ArrayList<Empleado> empleados;
 
     public Empresa() {
         empleados = new ArrayList<>();
     }
 
+    @XmlAttribute()
     public String getCif() {return cif;}
 
+    @XmlElement(name = "nombre")
     public String getNombre() {
         return nombre;
     }
 
+    @XmlElementWrapper(name = "empleados")
+    @XmlElement(name = "empleado")
     public ArrayList<Empleado> getEmpleados() {
         return empleados;
     }

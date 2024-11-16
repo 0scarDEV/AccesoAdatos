@@ -2,19 +2,16 @@ package EJ1_A4UD2;
 
 import javax.xml.bind.annotation.*;
 
-@XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = {"dni", "nombre", "edad"})
 public class Empleado {
-    @XmlElement
     private String dni;
-    @XmlElement
     private String nombre;
-    @XmlElement
     private int edad;
 
     public Empleado() {
     }
 
+    @XmlElement
     public String getDni() {
         return dni;
     }
@@ -23,6 +20,7 @@ public class Empleado {
         this.dni = dni;
     }
 
+    @XmlElement
     public String getNombre() {
         return nombre;
     }
@@ -31,6 +29,7 @@ public class Empleado {
         this.nombre = nombre;
     }
 
+    @XmlElement
     public int getEdad() {
         return edad;
     }

@@ -2,11 +2,9 @@ package EJ4_A4UD2;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
-@XmlRootElement(name = "Hotel")
 @XmlType (propOrder = {"nombre", "telefonos", "direccion"})
 public class Hotel implements Serializable {
     private int codHotel;
