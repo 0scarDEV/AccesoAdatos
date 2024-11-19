@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="jackson-annotations-2.17.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../libs/jackson/jackson-annotations-2.17.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../libs/jackson/jackson-core-2.17.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../libs/jackson/jackson-databind-2.17.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../libs/jackson/jackson-dataformat-xml-2.17.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../libs/jackson/jackson-datatype-jsr310-2.18.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../libs/jackson/stax2-api-4.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../libs/jackson/woodstox-core-asl-4.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
