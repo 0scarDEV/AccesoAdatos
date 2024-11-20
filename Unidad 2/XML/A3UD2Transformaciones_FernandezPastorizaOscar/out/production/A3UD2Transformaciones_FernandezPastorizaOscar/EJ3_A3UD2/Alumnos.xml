@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><alumnos>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<alumnos>
     <alumno>
         <nome>Perico dos Palotes</nome>
         <nota>8</nota>
@@ -31,4 +32,16 @@
         <nome>Bob Esponja</nome>
         <nota>5</nota>
     </alumno>
-<alumno><nome>Oscar</nome><nota>10</nota></alumno><alumno><nome>Oscar</nome><nota>10</nota></alumno></alumnos>
+    <alumno>
+        <nome>Oscar</nome>
+        <nota>10</nota>
+    </alumno>
+    <alumno>
+        <nome>Oscar</nome>
+        <nota>10</nota>
+    </alumno>
+    <alumno>
+        <nome>Oscar</nome>
+        <nota>9</nota>
+    </alumno>
+</alumnos>

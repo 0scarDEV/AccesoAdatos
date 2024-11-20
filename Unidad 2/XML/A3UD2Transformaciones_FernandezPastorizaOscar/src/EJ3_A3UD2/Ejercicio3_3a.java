@@ -6,6 +6,7 @@ import javax.xml.transform.*;
 import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -14,6 +15,7 @@ public class Ejercicio3_3a {
         String xsl = "src/EJ3_A3UD2/Alumnos.xsl";
         String alumnos = "src/EJ3_A3UD2/Alumnos.xml";
         String notas = "src/EJ3_A3UD2/Notas.xml";
+
 
         TransformerFactory transFact;
         transFact = TransformerFactory.newInstance();

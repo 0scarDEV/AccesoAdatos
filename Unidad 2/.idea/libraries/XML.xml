@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="XML">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/XML/ACTIVREPASOUD2DOMYSAX_FERNANDEZPASTORIZAOSCAR.zip!/" />
+      <root url="jar://$PROJECT_DIR$/XML/A3UD2Transformaciones_FernandezPastorizaOscar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/XML/ACTIV3UD2XPATH_FernandezPastorizaOscar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/XML/A4UD2Vinculación_FernandezPastorizaOscar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/XML/A4UD2REPASOVinculación_FernandezPastorizaOscar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/XML/A2UD2SAX_OscarFernandezPastoriza.zip!/" />
+      <root url="jar://$PROJECT_DIR$/XML/A1UD2DOM_OscarFernandezPastoriza.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

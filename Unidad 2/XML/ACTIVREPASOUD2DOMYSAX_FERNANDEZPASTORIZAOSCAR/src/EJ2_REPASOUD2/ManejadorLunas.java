@@ -9,6 +9,9 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class ManejadorLunas extends DefaultHandler {
     private DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -64,6 +67,11 @@ public class ManejadorLunas extends DefaultHandler {
                 String linea = new String(ch, start, length);
                 String[] partes = linea.split(" ");
                 String fecha = partes[0];
+
+                // AÑADIDO: Poner la fecha como se pide en el enunciado
+                LocalDate dateFecha = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                fecha = dateFecha.format(DateTimeFormatter.ofPattern("dd-MMM-yy", new Locale("es", "ES")));
+
                 Node nodoFecha = doc.createElement("Fecha");
                 nodoFecha.setTextContent(fecha);
                 luna.appendChild(nodoFecha);
