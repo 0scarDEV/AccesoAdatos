@@ -6,8 +6,8 @@
         <Informacion_Contacto>
             <Direccion>
                 <Calle>Luna</Calle>
-                <Numero>6</Numero>
                 <Localidad>Pontevedra</Localidad>
+                <Numero>6</Numero>
                 <Provincia>Pontevedra</Provincia>
             </Direccion>
             <Telefonos>222222222 222221199 222221111</Telefonos>
@@ -21,15 +21,15 @@
         <Informacion_Contacto>
             <Direccion>
                 <Calle>Sol</Calle>
+                <Localidad>Marín</Localidad>
                 <Numero>3</Numero>
-                <Localidad>Marin</Localidad>
                 <Provincia>Pontevedra</Provincia>
             </Direccion>
             <Telefonos>111111222 111111111</Telefonos>
         </Informacion_Contacto>
-        <Empresa>La colmena</Empresa>
-        <Puesto>Director</Puesto>
+        <Empresa>La Colmena</Empresa>
         <Salario>8000.0</Salario>
+        <Puesto>Director</Puesto>
     </Trabajador>
     <Trabajador>
         <Nombre>Manuel Sánchez</Nombre>
@@ -37,14 +37,14 @@
         <Informacion_Contacto>
             <Direccion>
                 <Calle>Nube</Calle>
-                <Numero>16</Numero>
                 <Localidad>Pontevedra</Localidad>
+                <Numero>16</Numero>
                 <Provincia>Pontevedra</Provincia>
             </Direccion>
-            <Telefonos>333333333 333331111</Telefonos>
+            <Telefonos>333333333 333333111</Telefonos>
         </Informacion_Contacto>
         <Empresa>El tornillo</Empresa>
-        <Puesto>Gerente</Puesto>
         <Salario>2000.0</Salario>
+        <Puesto>Gerente</Puesto>
     </Trabajador>
 </Personas>

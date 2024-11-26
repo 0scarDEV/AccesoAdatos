@@ -3,6 +3,7 @@ package EJ3_A4UD2;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import java.io.File;
 import java.util.ArrayList;
 
 public class Ejercicio4_3 {
@@ -34,7 +35,7 @@ public class Ejercicio4_3 {
         try {
             Marshaller marshaller = JAXBContext.newInstance(Personas.class).createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            marshaller.marshal(personas, System.out);
+            marshaller.marshal(personas, new File("src/EJ3_A4UD2/personas.xml"));
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }

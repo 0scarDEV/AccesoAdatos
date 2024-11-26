@@ -16,13 +16,35 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class OperacionesDOM {
+    private Document doc;
+
+    public OperacionesDOM() {}
+
+    public Document getDocument() {
+        return doc;
+    }
+
+    public OperacionesDOM(File ficheroXML) {
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        this.doc = generarDoc(dbf, ficheroXML);
+    }
+
+    public OperacionesDOM(String nombreRaiz) {
+        this.doc = getNuevoDocumento(nombreRaiz);
+    }
+
+    /** Devuelve un documento DOM a partir de una ruta .xml */
+    public Document generarDoc(DocumentBuilderFactory dbf, String xmlDocument) {
+        return generarDoc(dbf, new File(xmlDocument));
+    }
+
     /** Devuelve un documento DOM a partir de un fichero .xml */
-    public static Document generarDoc(DocumentBuilderFactory dbf, String xmlDocument) {
+    public Document generarDoc(DocumentBuilderFactory dbf, File fichXML) {
         dbf.setIgnoringElementContentWhitespace(true);
         Document documento;
         try {
             DocumentBuilder constructor = dbf.newDocumentBuilder();
-            documento = constructor.parse(new File(xmlDocument));
+            documento = constructor.parse(fichXML);
         } catch (ParserConfigurationException | IOException | SAXException e) {
             throw new RuntimeException(e);
         }
@@ -30,7 +52,7 @@ public class OperacionesDOM {
     }
 
     /** Devuelve un nuevo documento DOM vacío */
-    public static Document getNewDocument(String nameForRoot) {
+    public Document getNuevoDocumento(String nombreRaiz) {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db;
         try {
@@ -41,7 +63,7 @@ public class OperacionesDOM {
 
         DOMImplementation implementacion=db.getDOMImplementation();
 
-        return implementacion.createDocument(null, nameForRoot, null);
+        return implementacion.createDocument(null, nombreRaiz, null);
     }
 
     /** Guarda el Document en un nuevo fichero .xml creado  */
@@ -71,37 +93,59 @@ public class OperacionesDOM {
         }
     }
 
+    public void addAtributoToRoot(String atributeName, String atributeValue) {
+        addAtributoToElemento(doc.getDocumentElement(), atributeName, atributeValue);
+    }
+
     /** Crea un nuevo elemento y añade al final de la estructura DOM */
-    public static boolean appendNewElement(Document doc, String nodeName, String nodeValue) {
-        doc.appendChild(getNewElement(doc, nodeName, nodeValue));
-        return true;
+    public Element appendNewElemento(String nodeName) {
+        Element nuevoElemento;
+        if (doc.getDocumentElement() == null) {
+            nuevoElemento = (Element) doc.appendChild(getNewElemento(nodeName));
+        } else {
+            nuevoElemento = (Element) doc.getDocumentElement().appendChild(getNewElemento(nodeName));
+        }
+
+        return nuevoElemento;
+    }
+
+    /** Crea un nuevo elemento y añade al final de la estructura DOM */
+    public Element appendNewElemento(String nodeName, String nodeValue) {
+        Element nuevoElemento;
+        if (doc.getDocumentElement() == null) {
+            nuevoElemento = (Element) doc.appendChild(getNewElemento(nodeName, nodeValue));
+        } else {
+            nuevoElemento = (Element) doc.getDocumentElement().appendChild(getNewElemento(nodeName));
+        }
+
+        return nuevoElemento;
     }
 
     /** Crea un nuevo elemento con un nodeValue de texto y lo devuelve */
-    public static Element getNewElement(Document doc, String nodeName, String nodeValue) {
-        Element elemento = getNewElement(doc, nodeName);
+    public Element getNewElemento(String nodeName, String nodeValue) {
+        Element elemento = getNewElemento(nodeName);
         elemento.appendChild(doc.createTextNode(nodeValue));
         return elemento;
     }
 
     /** Crea un nuevo elemento y lo devuelve */
-    public static Element getNewElement(Document document,  String nodeName) {
-        return document.createElement(nodeName);
+    public Element getNewElemento(String nodeName) {
+        return doc.createElement(nodeName);
     }
 
     /** Añade un atributo al elemento existente */
-    public static boolean addAttributeToElement(Element element, String attributeName, String attributeValue) {
+    public boolean addAtributoToElemento(Element element, String attributeName, String attributeValue) {
         element.setAttribute(attributeName, attributeValue);
         return true;
     }
 
     /** Devuelve un atributo de un elemento, buscado por nombre */
-    public static Attr getAttributeByTag(Element element, String attributeName) {
+    public Attr getAtributoPorNombre(Element element, String attributeName) {
         return element.getAttributeNode(attributeName);
     }
 
     /** Crear un ID a todos los nodos hijos de un raiz */
-    public static void crearID(Node raiz) {
+    public void crearID(Node raiz) {
         NodeList nodos = raiz.getChildNodes();
         for (int i = 0; i < nodos.getLength(); i++) {
             Node nodo = nodos.item(i);
@@ -128,7 +172,7 @@ public class OperacionesDOM {
         }
     }
 
-    public static void showAttributes(Element element, StringBuilder output) {
+    public void appendAtributos(Element element, StringBuilder output) {
         NamedNodeMap atributos = element.getAttributes();
         for (int i = 0, len = atributos.getLength(); i < len; i++) {
             Node atributo = atributos.item(i);
@@ -136,11 +180,11 @@ public class OperacionesDOM {
         }
     }
 
-    public static NodeList getNodesByXPathExpression(Document document, String xpression) {
+    public NodeList getNodosPorXPATH(String xpression) {
         XPath xpath = XPathFactory.newInstance().newXPath();
         try {
             XPathExpression expresion = xpath.compile(xpression);
-            return (NodeList) expresion.evaluate(document, XPathConstants.NODESET);
+            return (NodeList) expresion.evaluate(doc, XPathConstants.NODESET);
         } catch (XPathExpressionException e) {
             throw new RuntimeException(e);
         }

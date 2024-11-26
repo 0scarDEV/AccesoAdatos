@@ -18,7 +18,9 @@ public class OperacionesSAX {
     private static final String namespaces="http://xml.org/sax/features/namespaces";
 
     public static SAXParser getNewSaxParser() throws ParserConfigurationException, SAXException {
-        return SAXParserFactory.newInstance().newSAXParser();
+        SAXParserFactory factoria = SAXParserFactory.newInstance();
+        factoria.setNamespaceAware(true);
+        return factoria.newSAXParser();
     }
 
     public static void parse(SAXParser saxParser, DefaultHandler manejador, String rutaArchivo) {
@@ -66,7 +68,7 @@ public class OperacionesSAX {
         }
     }
 
-    public static void parseByURL(SAXParser saxParser, DefaultHandler manejador, String ruta) throws IOException, SAXException, URISyntaxException {
-        saxParser.parse(new URI(ruta).toURL().openStream(), manejador);
+    public static void parseByURL(SAXParser saxParser, DefaultHandler manejador, String url) throws IOException, SAXException, URISyntaxException {
+        saxParser.parse(new URI(url).toURL().openStream(), manejador);
     }
 }
