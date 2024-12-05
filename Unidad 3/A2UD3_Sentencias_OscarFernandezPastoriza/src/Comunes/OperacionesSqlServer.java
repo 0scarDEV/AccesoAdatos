@@ -1,16 +1,14 @@
 package Comunes;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
-public class OperacionesBBDD {
-    private Connection con;
+public class OperacionesSqlServer extends Operaciones {
 
-    public OperacionesBBDD(Conexion con) {
-        this.con = con.getConexion();
+    public OperacionesSqlServer(Conexion con) {
+        super(con.getConnection());
     }
 
     public boolean aumentarSalario(String departamento, double aumento) {

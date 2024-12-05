@@ -45,7 +45,7 @@ public class Conexion {
         }
     }
 
-    public Connection getConexion() {
+    public Connection getConnection() {
         return con;
     }
 }
