@@ -44,4 +44,13 @@ public class Proxecto {
     public void setNumDepartamentoPertenece(int numDepartamentoPertenece) {
         this.numDepartamentoPertenece = numDepartamentoPertenece;
     }
+
+    @Override public String toString() {
+        return "Proxecto{" +
+                "numProxecto=" + numProxecto +
+                ", nomeProxecto='" + nomeProxecto + '\'' +
+                ", lugar='" + lugar + '\'' +
+                ", numDepartamentoPertenece=" + numDepartamentoPertenece +
+                '}';
+    }
 }

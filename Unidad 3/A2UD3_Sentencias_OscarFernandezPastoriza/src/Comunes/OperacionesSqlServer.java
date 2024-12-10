@@ -1,5 +1,6 @@
 package Comunes;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -121,5 +122,34 @@ public class OperacionesSqlServer extends Operaciones {
         }
 
         return rs;
+    }
+
+    public void actualizarDireccionEmpregado(String s, String s1, String s2) {
+        try {
+            Statement st = con.createStatement();
+            st.execute(
+                    // TODO: Verificar la existencia del procedimiento, por si existiera, rehacerlo
+            "CREATE PROCEDURE sp_cambioDomicilio (" +
+                "    @nssEmpregado varchar(15)," +
+                "    @rua varchar(30)," +
+                "    @num int," +
+                "    @piso varchar(4)," +
+                "    @codPostal char(5)," +
+                "    @localidade varchar(25)" +
+                ") AS BEGIN" +
+                "    UPDATE EMPREGADO" +
+                "    SET Rua = @rua," +
+                "        Numero_rua = @num," +
+                "        Piso = @piso," +
+                "        CP = @codPostal," +
+                "        Localidade = @localidade" +
+                "    WHERE NSS = @nssEmpregado;" +
+                "END"
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        // TODO: El call(procedure) y eso
     }
 }

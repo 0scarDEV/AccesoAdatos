@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="mssql-jdbc-11.2.0.jre18">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../SQL/Drivers/SqlServer 2019/sqljdbc_11.2.0.0_enu/sqljdbc_11.2/enu/mssql-jdbc-11.2.0.jre18.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../libs/sql/mssql-jdbc-11.2.0.jre18.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

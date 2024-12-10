@@ -2,8 +2,8 @@ package Comunes;
 
 import E2_3y4.Proxecto;
 
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class OperacionesMySQL extends Operaciones {
     public OperacionesMySQL(Conexion con) {
@@ -70,5 +70,55 @@ public class OperacionesMySQL extends Operaciones {
             }
             throw new RuntimeException(e);
         }
+    }
+
+    public void insertarEmpleadoProxecto(String nss, int numProxecto) {
+        try {
+            con.setAutoCommit(false);
+            Statement st = con.createStatement();
+
+            String sql =
+                    "INSERT INTO EMPREGADO_PROXECTO " +
+                            "VALUES ('" + nss + "', " + numProxecto + " , 30)"
+                    ;
+
+            st.executeUpdate(sql);
+
+            con.commit();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ArrayList<Proxecto> getAllProxectos(String departamento) {
+        ArrayList<Proxecto> proxectos = new ArrayList<>();
+
+        PreparedStatement ps;
+        try {
+            ps = con.prepareStatement(
+                "SELECT Num_proxecto, Nome_proxecto, Lugar, Num_departamento_pertenece " +
+                    "FROM proxecto WHERE Num_departamento_pertenece = (" +
+                        "SELECT Num_departamento FROM DEPARTAMENTO WHERE Nome_departamento = ?" +
+                    ")"
+            );
+            ps.setString(1, departamento);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                proxectos.add(
+                    new Proxecto(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4)
+                    )
+                );
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return proxectos;
     }
 }
