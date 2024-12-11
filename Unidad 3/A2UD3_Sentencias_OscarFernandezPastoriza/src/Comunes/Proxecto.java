@@ -1,4 +1,4 @@
-package E2_3y4;
+package Comunes;
 
 public class Proxecto {
     private int numProxecto;

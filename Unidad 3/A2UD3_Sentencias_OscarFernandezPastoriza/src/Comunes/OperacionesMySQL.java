@@ -1,7 +1,5 @@
 package Comunes;
 
-import E2_3y4.Proxecto;
-
 import java.sql.*;
 import java.util.ArrayList;
 

@@ -2,6 +2,7 @@ package E2_3y4;
 
 import Comunes.Conexion;
 import Comunes.OperacionesMySQL;
+import Comunes.Proxecto;
 
 import java.util.ArrayList;
 
