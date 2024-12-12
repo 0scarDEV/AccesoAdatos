@@ -370,42 +370,13 @@ public class OperacionesSqlServer extends Operaciones {
     }
     // endregion
 
-    // region UD2A2 - Ej6a
-    public void visualizarTiposResultSet() {
+    // region UD2A2 - Ej6 - Útiles
+    private boolean existeNumDepartamento(int numDepartamento) {
         try {
-            DatabaseMetaData dbmd = con.getMetaData();
-            ResultSet rs = dbmd.getTypeInfo();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM DEPARTAMENTO WHERE Num_departamento = " + numDepartamento);
 
-            while (rs.next()) {
-                System.out.println("Nombre: " + rs.getString("TYPE_NAME"));
-                System.out.println("Tipo: " + rs.getString("DATA_TYPE"));
-                System.out.println("------------------------------");
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    // endregion
-
-    // region UD2A2 - Ej6b
-    public boolean insertarNuevoProxecto(Proxecto proxecto) {
-        try {
-            Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            ResultSet rs = st.executeQuery("SELECT * FROM PROXECTO");
-
-            if (!existeNomProxecto(proxecto) && existeNumDepartamento(proxecto)) {
-                rs.moveToInsertRow();
-                rs.updateInt("Num_proxecto", proxecto.getNumProxecto());
-                rs.updateString("Nome_proxecto", proxecto.getNomeProxecto());
-                rs.updateString("Lugar", proxecto.getLugar());
-                rs.updateInt("Num_departamento_pertenece", proxecto.getNumDepartamentoPertenece());
-                rs.insertRow();
-            } else {
-                return false;
-            }
-
-            return true;
-
+            return rs.next();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -433,9 +404,109 @@ public class OperacionesSqlServer extends Operaciones {
         }
     }
 
+    // endregion
+
+    // region UD2A2 - Ej6a
+    public void visualizarTiposResultSet() {
+        try {
+            DatabaseMetaData dbmd = con.getMetaData();
+            ResultSet rs = dbmd.getTypeInfo();
+
+            while (rs.next()) {
+                System.out.println("Nombre: " + rs.getString("TYPE_NAME"));
+                System.out.println("Tipo: " + rs.getString("DATA_TYPE"));
+                System.out.println("------------------------------");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    // endregion
+
+    // region UD2A2 - Ej6b
+    public boolean insertarNuevoProxecto(Proxecto proxecto) {
+        try {
+            Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = st.executeQuery("SELECT * FROM PROXECTO");
+
+            if (!existeNomProxecto(proxecto) && existeNumDepartamento(proxecto)) {
+                rs.beforeFirst();   // Nos ponemos antes de la primera fila
+                rs.moveToInsertRow();   // Nos ponemos en la siguiente fila
+                // Cambiamos cosas en memoria
+                rs.updateInt("Num_proxecto", proxecto.getNumProxecto());
+                rs.updateString("Nome_proxecto", proxecto.getNomeProxecto());
+                rs.updateString("Lugar", proxecto.getLugar());
+                rs.updateInt("Num_departamento_pertenece", proxecto.getNumDepartamentoPertenece());
+                rs.insertRow(); // Lo cambiamos en la BBDD
+                rs.moveToCurrentRow();
+            } else {
+                return false;
+            }
+
+            return true;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    // endregion
+
     // region UD2A2 - Ej6c
+    public boolean aumentarSalario(int numDepartamento, int cantidad) {
+        boolean hayAumento = false;
+        try {
+            if (existeNumDepartamento(numDepartamento)) {
+                String sql = "SELECT Salario FROM EMPREGADO WHERE Num_departamento_pertenece = ?";
+
+                PreparedStatement ps = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                ps.setInt(1, numDepartamento);
+
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    rs.updateDouble("salario", rs.getDouble("Salario") + cantidad);
+                    rs.updateRow();
+                }
+                hayAumento = true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return hayAumento;
+    }
 
 
     // region UD2A2 - Ej6d
+    public void mostrarPersonalizado(int numProxectos) {
+        String sql = "SELECT NSS, NOME + ' ' + Apelido_1 + ' ' + Apelido_2 as NomeCompleto, Localidade, Salario " +
+                "FROM EMPREGADO WHERE NSS IN (" +
+                "   SELECT NSS_EMPREGADO FROM EMPREGADO_PROXECTO GROUP BY NSS_EMPREGADO HAVING COUNT(*) > ?" +
+                ")";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ps.setInt(1, numProxectos);
+            ResultSet rs = ps.executeQuery();
 
+            rs.beforeFirst();
+            rs.first();
+            System.out.println("Primera fila");
+            System.out.println("NSS: " + rs.getString("NSS") + " Nome completo: " + rs.getString("NomeCompleto") + " Localidade: " + rs.getString("Localidade") + " Salario " + rs.getDouble("Salario"));
+
+            rs.last();
+            System.out.println("Última fila");
+            System.out.println("NSS: " + rs.getString("NSS") + " Nome completo: " + rs.getString("NomeCompleto") + " Localidade: " + rs.getString("Localidade") + " Salario " + rs.getDouble("Salario"));
+
+            rs.relative(-2);
+            System.out.println("Antepenúltima fila");
+            System.out.println("NSS: " + rs.getString("NSS") + " Nome completo: " + rs.getString("NomeCompleto") + " Localidade: " + rs.getString("Localidade") + " Salario " + rs.getDouble("Salario"));
+
+            rs.last();
+            System.out.println("Recorrido de última a primera fila");
+            do {
+                System.out.println("\t- NSS: " + rs.getString("NSS") + " Nome completo: " + rs.getString("NomeCompleto") + " Localidade: " + rs.getString("Localidade") + " Salario " + rs.getDouble("Salario"));
+            } while (rs.previous());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

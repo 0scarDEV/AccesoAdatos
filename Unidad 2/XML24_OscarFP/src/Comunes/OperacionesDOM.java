@@ -16,7 +16,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
 /* Óscar Fernández Pastoriza - 53862191D */
 
 public class OperacionesDOM {
