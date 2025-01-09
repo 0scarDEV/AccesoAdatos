@@ -1,0 +1,100 @@
+{
+    "vehiculos": [
+        {
+            "matricula": "1293ABC",
+            "marca": "Toyota",
+            "modelo": "Corolla",
+            "tipo": "G",
+            "vehiculoPropio": {
+                "fechaCompra": "2023-05-15",
+                "precio": 15000.00
+            }
+        },
+        {
+            "matricula": "1678XYZ",
+            "marca": "Ford",
+            "modelo": "Fiesta",
+            "tipo": "D",
+            "vehiculoRenting": {
+                "fechaInicio": "2023-07-01",
+                "precioMensual": 200.00,
+                "meses": 24
+            }
+        },
+        {
+            "matricula": "8345DEF",
+            "marca": "Honda",
+            "modelo": "Civic",
+            "tipo": "G",
+            "vehiculoPropio": {
+                "fechaCompra": "2022-11-10",
+                "precio": 18000.00
+            }
+        },
+        {
+            "matricula": "6789XYZ",
+            "marca": "BMW",
+            "modelo": "Serie 3",
+            "tipo": "D",
+            "vehiculoRenting": {
+                "fechaInicio": "2022-09-15",
+                "precioMensual": 350.00,
+                "meses": 18
+            }
+        },
+        {
+            "matricula": "7890PQR",
+            "marca": "Audi",
+            "modelo": "A4",
+            "tipo": "D",
+            "vehiculoRenting": {
+                "fechaInicio": "2021-12-10",
+                "precioMensual": 280.00,
+                "meses": 36
+            }
+        },
+        {
+            "matricula": "3322ABC",
+            "marca": "Nissan",
+            "modelo": "Altima",
+            "tipo": "G",
+            "vehiculoPropio": {
+                "fechaCompra": "2023-01-15",
+                "precio": 19000.00
+            }
+        },
+        {
+            "matricula": "7891TQR",
+            "marca": "Audi",
+            "modelo": "A4",
+            "tipo": "D",
+            "vehiculoRenting": {
+                "fechaInicio": "2020-10-23",
+                "precioMensual": 280.00,
+                "meses": 36
+            }
+        },
+        {
+            "matricula": "7654FGD",
+            "marca": "Nissan",
+            "modelo": "Altima",
+            "tipo": "G",
+            "vehiculoRenting": {
+                "fechaInicio": "2020-10-23",
+                "precioMensual": 280.00,
+                "meses": 36
+            }
+        },
+        {
+            "matricula": "3662ABF",
+            "marca": "Nissan",
+            "modelo": "Maxima",
+            "tipo": "D",
+            "vehiculoPropio": {
+                "fechaCompra": "2024-11-25",
+                "precio": 21000.00
+            }
+        }
+
+    ]
+}
