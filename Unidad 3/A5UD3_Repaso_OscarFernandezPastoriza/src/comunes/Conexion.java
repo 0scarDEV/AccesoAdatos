@@ -1,4 +1,4 @@
-package ejercicio5_2.bbdd;
+package comunes;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
