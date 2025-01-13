@@ -20,8 +20,8 @@ public class E5_3 {
     *  */
 
     public static void main(String[] args) {
-        String eliminarDepartamento = "PERSOAL";
-        String departamentoReasignar = "";
+        String eliminarDepartamento = "TÉCNICO";
+        String departamentoReasignar = "INFORMÁTICA";
 
         OperacionesSQLServerDepartamento operacionesSQLServerDepartamento = new OperacionesSQLServerDepartamento(new Conexion(Conexion.SGDB.SQLServer).getConnection());
         operacionesSQLServerDepartamento.eliminarDepartamento(eliminarDepartamento, departamentoReasignar);
