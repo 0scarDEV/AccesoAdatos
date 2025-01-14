@@ -1,5 +1,10 @@
 package comunes;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.*;
 
 public class Operaciones {
@@ -42,5 +47,16 @@ public class Operaciones {
     private boolean tablaExiste(String nombreTabla) throws SQLException {
         ResultSet rs = con.getMetaData().getTables(null, null, nombreTabla, null);
         return rs.next();
+    }
+
+    public void crearArchivoJson(JsonObject datosJson, String filename) {
+        Gson gson = new Gson();
+        String json = gson.toJson(datosJson);
+
+        try (FileWriter writer = new FileWriter(filename)) {
+            writer.write(json);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

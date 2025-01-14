@@ -39,8 +39,13 @@ public class OperacionesSQLServerVehiculos extends Operaciones {
                             "meses int NOT NULL," + "CONSTRAINT FK_RENTING_VEHICULOS FOREIGN KEY (id) REFERENCES VEHICULOS(id)" + ")");
 
             stmt.addBatch(
-                    "CREATE TABLE VEHICULOS_PROPIOS (" + "id int PRIMARY KEY," + "fecha_compra date NOT NULL," + "precio_compra money NOT NULL," +
-                            "CONSTRAINT FK_PROPIOS_VEHICULOS FOREIGN KEY (id) REFERENCES VEHICULOS(id)" + ")");
+            "CREATE TABLE VEHICULOS_PROPIOS (" +
+                    "id int PRIMARY KEY," +
+                    "fecha_compra date NOT NULL," +
+                    "precio_compra money NOT NULL," +
+                    "CONSTRAINT FK_PROPIOS_VEHICULOS FOREIGN KEY (id) REFERENCES VEHICULOS(id)" +
+                ")"
+            );
 
             stmt.executeBatch();
             System.out.println("Tablas creadas correctamente.");

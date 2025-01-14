@@ -1,0 +1,88 @@
+{
+  "EmpleadosReasignados": [
+    {
+      "NSS": "2221111",
+      "Nombre": "Duarte",
+      "Apellido1": "Xil",
+      "Apellido2": "Torres",
+      "NuevoDepartamento": 4
+    },
+    {
+      "NSS": "3330000",
+      "Nombre": "Javier",
+      "Apellido1": "Lamela",
+      "Apellido2": "López",
+      "NuevoDepartamento": 4
+    },
+    {
+      "NSS": "3338883",
+      "Nombre": "Paula",
+      "Apellido1": "Mar",
+      "Apellido2": "López",
+      "NuevoDepartamento": 4
+    },
+    {
+      "NSS": "4044443",
+      "Nombre": "Rosa",
+      "Apellido1": "Murillo",
+      "Apellido2": "Rivera",
+      "NuevoDepartamento": 4
+    },
+    {
+      "NSS": "5000000",
+      "Nombre": "Uxío",
+      "Apellido1": "Cabado",
+      "Apellido2": "Penalta",
+      "NuevoDepartamento": 4
+    },
+    {
+      "NSS": "5555000",
+      "Nombre": "Anxos",
+      "Apellido1": "Loures",
+      "Apellido2": "Freire",
+      "NuevoDepartamento": 4
+    },
+    {
+      "NSS": "6000006",
+      "Nombre": "Beatríz",
+      "Apellido1": "Mallo",
+      "Apellido2": "López",
+      "NuevoDepartamento": 4
+    },
+    {
+      "NSS": "6000600",
+      "Nombre": "Carmen",
+      "Apellido1": "Jurado",
+      "Apellido2": "Vega",
+      "NuevoDepartamento": 4
+    },
+    {
+      "NSS": "7000007",
+      "Nombre": "Alex",
+      "Apellido1": "Méndez",
+      "Apellido2": "García",
+      "NuevoDepartamento": 4
+    }
+  ],
+  "ProyectosReasignados": [
+    {
+      "Num_proxecto": 6,
+      "Nombre": "DESEÑO NOVO CPD LUGO",
+      "NuevoDepartamentoControla": 4
+    },
+    {
+      "Num_proxecto": 8,
+      "Nombre": "DESEÑO NOVA TENDA VIGO",
+      "NuevoDepartamentoControla": 4
+    },
+    {
+      "Num_proxecto": 10,
+      "Nombre": "PROXECTO Y",
+      "NuevoDepartamentoControla": 4
+    }
+  ],
+  "DepartamentoEliminado": {
+    "Num_departamento": 3,
+    "Nombre": "TÉCNICO"
+  }
+}
