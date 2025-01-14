@@ -1,7 +1,6 @@
 package ejercicio5_2;
 
-import ejercicio5_2.bbdd.Conexion;
-import ejercicio5_2.bbdd.OperacionesSQLServerVehiculos;
+import comunes.Conexion;
 
 import java.sql.Date;
 import java.time.LocalDate;

@@ -1,11 +1,9 @@
-package ejercicio5_2.bbdd;
+package ejercicio5_2;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import ejercicio5_2.Vehiculo;
-import ejercicio5_2.VehiculoAdapter;
-import ejercicio5_2.VehiculoPropio;
-import ejercicio5_2.VehiculoRenting;
+import comunes.Conexion;
+import comunes.Operaciones;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
