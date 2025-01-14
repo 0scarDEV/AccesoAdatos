@@ -1,6 +1,7 @@
 package comunes;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
 import java.io.FileWriter;
@@ -50,7 +51,7 @@ public class Operaciones {
     }
 
     public void crearArchivoJson(JsonObject datosJson, String filename) {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(datosJson);
 
         try (FileWriter writer = new FileWriter(filename)) {
