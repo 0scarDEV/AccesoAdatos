@@ -1,6 +1,7 @@
-package ejercicio7_1;
+package ejercicios;
 
 import comunes.Conexion;
+import comunes.OperacionesSQLServerFamiliares;
 
 public class E7_1 {
 /* En la base de datos Empresa en SQL Server se quieren guardar los familiares de los empleados.
