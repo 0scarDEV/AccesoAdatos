@@ -1,0 +1,270 @@
+{
+  "familiaresInsertados": [],
+  "familiaresErroneos": [
+    {
+      "NSS": "1010001",
+      "familiares": [
+        {
+          "NSS": "1010001",
+          "NSS_empregado": "1010001",
+          "nome": "Rocio",
+          "apelido1": "López",
+          "apelido2": "Ferreiro",
+          "dataNacemento": "null",
+          "parentesco": "Hija",
+          "sexo": "M"
+        }
+      ]
+    },
+    {
+      "NSS": "1111111",
+      "familiares": [
+        {
+          "NSS": "1111112",
+          "NSS_empregado": "1111111",
+          "nome": "José Manuel",
+          "apelido1": "García",
+          "apelido2": "Graña",
+          "dataNacemento": "null",
+          "parentesco": "Hijo",
+          "sexo": "H"
+        }
+      ]
+    },
+    {
+      "NSS": "2221111",
+      "familiares": [
+        {
+          "NSS": "2221111",
+          "NSS_empregado": "2221111",
+          "nome": "Duarte",
+          "apelido1": "Xil",
+          "apelido2": "Torres",
+          "dataNacemento": "null",
+          "parentesco": "Padre",
+          "sexo": "H"
+        },
+        {
+          "NSS": "2221112",
+          "NSS_empregado": "2221111",
+          "nome": "Xoán",
+          "apelido1": "Xil",
+          "apelido2": "Torres",
+          "dataNacemento": "null",
+          "parentesco": "Hermano",
+          "sexo": "H"
+        },
+        {
+          "NSS": "2221113",
+          "NSS_empregado": "2221111",
+          "nome": "Lia",
+          "apelido1": "Xil",
+          "apelido2": "Torres",
+          "dataNacemento": "null",
+          "parentesco": "Sobrina",
+          "sexo": "M"
+        }
+      ]
+    },
+    {
+      "NSS": "3330000",
+      "familiares": [
+        {
+          "NSS": "3330001",
+          "NSS_empregado": "3330000",
+          "nome": "Paula",
+          "apelido1": "Mar",
+          "apelido2": "López",
+          "dataNacemento": "null",
+          "parentesco": "Madre",
+          "sexo": "M"
+        },
+        {
+          "NSS": "3330002",
+          "NSS_empregado": "3330000",
+          "nome": "Martín",
+          "apelido1": "Mar",
+          "apelido2": "López",
+          "dataNacemento": "null",
+          "parentesco": "Hermano",
+          "sexo": "H"
+        }
+      ]
+    },
+    {
+      "NSS": "4444444",
+      "familiares": [
+        {
+          "NSS": "4444445",
+          "NSS_empregado": "4444444",
+          "nome": "Antonia",
+          "apelido1": "Romero",
+          "apelido2": "Boo",
+          "dataNacemento": "null",
+          "parentesco": "Hermana",
+          "sexo": "M"
+        },
+        {
+          "NSS": "4444446",
+          "NSS_empregado": "4444444",
+          "nome": "Uxío",
+          "apelido1": "Cabado",
+          "apelido2": "Penalta",
+          "dataNacemento": "null",
+          "parentesco": "Hermano",
+          "sexo": "H"
+        },
+        {
+          "NSS": "4444447",
+          "NSS_empregado": "4444444",
+          "nome": "Pedro",
+          "apelido1": "Cabado",
+          "apelido2": "Penalta",
+          "dataNacemento": "null",
+          "parentesco": "Sobrino",
+          "sexo": "H"
+        },
+        {
+          "NSS": "4444448",
+          "NSS_empregado": "4444444",
+          "nome": "Laura",
+          "apelido1": "Cabado",
+          "apelido2": "Penalta",
+          "dataNacemento": "null",
+          "parentesco": "Sobrina",
+          "sexo": "M"
+        }
+      ]
+    },
+    {
+      "NSS": "5555000",
+      "familiares": [
+        {
+          "NSS": "5555001",
+          "NSS_empregado": "5555000",
+          "nome": "Anxos",
+          "apelido1": "Loures",
+          "apelido2": "Freire",
+          "dataNacemento": "null",
+          "parentesco": "Madre",
+          "sexo": "M"
+        },
+        {
+          "NSS": "5555001",
+          "NSS_empregado": "5555000",
+          "nome": "Pepe",
+          "apelido1": "Gómez",
+          "apelido2": "Freire",
+          "dataNacemento": "null",
+          "parentesco": "Hermano",
+          "sexo": "H"
+        }
+      ]
+    },
+    {
+      "NSS": "6000006",
+      "familiares": [
+        {
+          "NSS": "6000007",
+          "NSS_empregado": "6000006",
+          "nome": "Carmen",
+          "apelido1": "Jurado",
+          "apelido2": "Vega",
+          "dataNacemento": "null",
+          "parentesco": "Madre",
+          "sexo": "M"
+        },
+        {
+          "NSS": "6000008",
+          "NSS_empregado": "6000006",
+          "nome": "María",
+          "apelido1": "Jurado",
+          "apelido2": "Vega",
+          "dataNacemento": "null",
+          "parentesco": "Hija",
+          "sexo": "M"
+        }
+      ]
+    },
+    {
+      "NSS": "7777777",
+      "familiares": [
+        {
+          "NSS": "7777778",
+          "NSS_empregado": "7777777",
+          "nome": "Rubén",
+          "apelido1": "Guerra",
+          "apelido2": "Vázquez",
+          "dataNacemento": "null",
+          "parentesco": "Hermano",
+          "sexo": "H"
+        },
+        {
+          "NSS": "7777779",
+          "NSS_empregado": "7777777",
+          "nome": "Agostiño",
+          "apelido1": "Cerviño",
+          "apelido2": "Seoane",
+          "dataNacemento": "null",
+          "parentesco": "Hermano",
+          "sexo": "H"
+        },
+        {
+          "NSS": "7777780",
+          "NSS_empregado": "7777777",
+          "nome": "Xoán",
+          "apelido1": "Guerra",
+          "apelido2": "Vázquez",
+          "dataNacemento": "null",
+          "parentesco": "Sobrino",
+          "sexo": "H"
+        },
+        {
+          "NSS": "7777780",
+          "NSS_empregado": "7777777",
+          "nome": "Paul",
+          "apelido1": "Guerra",
+          "apelido2": "Vázquez",
+          "dataNacemento": "null",
+          "parentesco": "Sobrino",
+          "sexo": "H"
+        }
+      ]
+    },
+    {
+      "NSS": "8888889",
+      "familiares": [
+        {
+          "NSS": "8888890",
+          "NSS_empregado": "8888889",
+          "nome": "Breixo",
+          "apelido1": "Pereiro",
+          "apelido2": "Lamela",
+          "dataNacemento": "null",
+          "parentesco": "Hermano",
+          "sexo": "H"
+        },
+        {
+          "NSS": "8888891",
+          "NSS_empregado": "8888889",
+          "nome": "Angeles",
+          "apelido1": "López",
+          "apelido2": "Arias",
+          "dataNacemento": "null",
+          "parentesco": "Hermana",
+          "sexo": "M"
+        },
+        {
+          "NSS": "8888891",
+          "NSS_empregado": "8888889",
+          "nome": "Celia",
+          "apelido1": "Pereiro",
+          "apelido2": "Lamela",
+          "dataNacemento": "null",
+          "parentesco": "Sobrina",
+          "sexo": "M"
+        }
+      ]
+    }
+  ]
+}

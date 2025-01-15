@@ -5,6 +5,7 @@ import java.sql.Date;
 public class Familiar {
     public enum Sexo {Hombre, Mujer}
 
+    private String nssEmpregado;
     private String nss;
     private String nome;
     private String apelido1;
@@ -21,14 +22,30 @@ public class Familiar {
         setSexo(sexo);
     }
 
+    public Familiar(String nssEmpregado, String nss, String nome, String apelido1, String parentesco, Sexo sexo) {
+        this(nss, nome, apelido1, parentesco, sexo);
+        this.nssEmpregado = nssEmpregado;
+    }
+
     public Familiar(String nss, String nome, String apelido1, String apelido2, Date dataNacemento, String parentesco, Sexo sexo) {
-        this.nss = nss;
-        this.nome = nome;
-        this.apelido1 = apelido1;
+        this(nss, nome, apelido1, parentesco, sexo);
         this.apelido2 = apelido2;
         this.dataNacemento = dataNacemento;
-        this.parentesco = parentesco;
-        setSexo(sexo);
+    }
+
+    public Familiar(String nssEmpregado, String nss, String nome, String apelido1, String apelido2, Date dataNacemento, String parentesco, Sexo sexo) {
+        this(nss, nome, apelido1, parentesco, sexo);
+        this.nssEmpregado = nssEmpregado;
+        this.apelido2 = apelido2;
+        this.dataNacemento = dataNacemento;
+    }
+
+    public String getNssEmpregado() {
+        return nssEmpregado;
+    }
+
+    public void setNssEmpregado(String nssEmpregado) {
+        this.nssEmpregado = nssEmpregado;
     }
 
     public String getNss() {
@@ -65,6 +82,10 @@ public class Familiar {
 
     public Date getDataNacemento() {
         return dataNacemento;
+    }
+
+    public String getDataNacementoAsStr() {
+        return dataNacemento != null ? dataNacemento.toString() : "null";
     }
 
     public void setDataNacemento(Date dataNacemento) {

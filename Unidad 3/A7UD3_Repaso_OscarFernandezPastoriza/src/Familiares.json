@@ -1,0 +1,246 @@
+{
+    "empleados": [
+        {
+            "NSS_empleado": "1010001",
+            "familiares": [
+                {
+                    "NSS": "1010001",
+                    "Nome": "Rocio",
+                    "Apelido1": "López",
+                    "Apelido2": "Ferreiro",
+                    "DataNacemento": "1999-03-12",
+                    "Parentesco": "Hija",
+                    "Sexo": "M"
+                }
+            ]
+        },
+        {
+            "NSS_empleado": "1111111",
+            "familiares": [
+                {
+                    "NSS": "1111112",
+                    "Nome": "José Manuel",
+                    "Apelido1": "García",
+                    "Apelido2": "Graña",
+                    "DataNacemento": "2000-09-01",
+                    "Parentesco": "Hijo",
+                    "Sexo": "H"
+                }
+            ]
+        },
+        {
+            "NSS_empleado": "2221111",
+            "familiares": [
+                {
+                    "NSS": "2221111",
+                    "Nome": "Duarte",
+                    "Apelido1": "Xil",
+                    "Apelido2": "Torres",
+                    "DataNacemento": "1987-11-14",
+                    "Parentesco": "Padre",
+                    "Sexo": "H"
+                },
+                {
+                    "NSS": "2221112",
+                    "Nome": "Xoán",
+                    "Apelido1": "Xil",
+                    "Apelido2": "Torres",
+                    "DataNacemento": "1990-03-05",
+                    "Parentesco": "Hermano",
+                    "Sexo": "H"
+                },
+                {
+                    "NSS": "2221113",
+                    "Nome": "Lia",
+                    "Apelido1": "Xil",
+                    "Apelido2": "Torres",
+                    "DataNacemento": "1995-07-20",
+                    "Parentesco": "Sobrina",
+                    "Sexo": "M"
+                }
+            ]
+        },
+        {
+            "NSS_empleado": "3330000",
+            "familiares": [
+                {
+                    "NSS": "3330001",
+                    "Nome": "Paula",
+                    "Apelido1": "Mar",
+                    "Apelido2": "López",
+                    "DataNacemento": "1967-05-11",
+                    "Parentesco": "Madre",
+                    "Sexo": "M"
+                },
+                {
+                    "NSS": "3330002",
+                    "Nome": "Martín",
+                    "Apelido1": "Mar",
+                    "Apelido2": "López",
+                    "DataNacemento": "1985-11-22",
+                    "Parentesco": "Hermano",
+                    "Sexo": "H"
+                }
+            ]
+        },
+        {
+            "NSS_empleado": "4444444",
+            "familiares": [
+                {
+                    "NSS": "4444445",
+                    "Nome": "Antonia",
+                    "Apelido1": "Romero",
+                    "Apelido2": "Boo",
+                    "DataNacemento": "1988-06-02",
+                    "Parentesco": "Hermana",
+                    "Sexo": "M"
+                },
+                {
+                    "NSS": "4444446",
+                    "Nome": "Uxío",
+                    "Apelido1": "Cabado",
+                    "Apelido2": "Penalta",
+                    "DataNacemento": "1987-08-14",
+                    "Parentesco": "Hermano",
+                    "Sexo": "H"
+                },
+                {
+                    "NSS": "4444447",
+                    "Nome": "Pedro",
+                    "Apelido1": "Cabado",
+                    "Apelido2": "Penalta",
+                    "DataNacemento": "2005-05-15",
+                    "Parentesco": "Sobrino",
+                    "Sexo": "H"
+                },
+                {
+                    "NSS": "4444448",
+                    "Nome": "Laura",
+                    "Apelido1": "Cabado",
+                    "Apelido2": "Penalta",
+                    "DataNacemento": "2008-09-25",
+                    "Parentesco": "Sobrina",
+                    "Sexo": "M"
+                }
+            ]
+        },
+        {
+            "NSS_empleado": "5555000",
+            "familiares": [
+                {
+                    "NSS": "5555001",
+                    "Nome": "Anxos",
+                    "Apelido1": "Loures",
+                    "Apelido2": "Freire",
+                    "DataNacemento": "1978-08-12",
+                    "Parentesco": "Madre",
+                    "Sexo": "M"
+                }, {
+                    "NSS": "5555001",
+                    "Nome": "Pepe",
+                    "Apelido1": "Gómez",
+                    "Apelido2": "Freire",
+                    "DataNacemento": "1999-08-19",
+                    "Parentesco": "Hermano",
+                    "Sexo": "H"
+                }
+            ]
+        },
+        {
+            "NSS_empleado": "6000006",
+            "familiares": [
+                {
+                    "NSS": "6000007",
+                    "Nome": "Carmen",
+                    "Apelido1": "Jurado",
+                    "Apelido2": "Vega",
+                    "DataNacemento": "1983-07-15",
+                    "Parentesco": "Madre",
+                    "Sexo": "M"
+                },
+                {
+                    "NSS": "6000008",
+                    "Nome": "María",
+                    "Apelido1": "Jurado",
+                    "Apelido2": "Vega",
+                    "DataNacemento": "2000-04-10",
+                    "Parentesco": "Hija",
+                    "Sexo": "M"
+                }
+            ]
+        },
+        {
+            "NSS_empleado": "7777777",
+            "familiares": [
+                {
+                    "NSS": "7777778",
+                    "Nome": "Rubén",
+                    "Apelido1": "Guerra",
+                    "Apelido2": "Vázquez",
+                    "DataNacemento": "1986-06-06",
+                    "Parentesco": "Hermano",
+                    "Sexo": "H"
+                },
+                {
+                    "NSS": "7777779",
+                    "Nome": "Agostiño",
+                    "Apelido1": "Cerviño",
+                    "Apelido2": "Seoane",
+                    "DataNacemento": "1986-07-14",
+                    "Parentesco": "Hermano",
+                    "Sexo": "H"
+                },
+                {
+                    "NSS": "7777780",
+                    "Nome": "Xoán",
+                    "Apelido1": "Guerra",
+                    "Apelido2": "Vázquez",
+                    "DataNacemento": "2010-05-10",
+                    "Parentesco": "Sobrino",
+                    "Sexo": "H"
+                },
+                {
+                    "NSS": "7777780",
+                    "Nome": "Paul",
+                    "Apelido1": "Guerra",
+                    "Apelido2": "Vázquez",
+                    "DataNacemento": "2014-06-10",
+                    "Parentesco": "Sobrino",
+                    "Sexo": "H"
+                }
+            ]
+        },
+        {
+            "NSS_empleado": "8888889",
+            "familiares": [
+                {
+                    "NSS": "8888890",
+                    "Nome": "Breixo",
+                    "Apelido1": "Pereiro",
+                    "Apelido2": "Lamela",
+                    "DataNacemento": "1987-02-03",
+                    "Parentesco": "Hermano",
+                    "Sexo": "H"
+                },
+                {
+                    "NSS": "8888891",
+                    "Nome": "Angeles",
+                    "Apelido1": "López",
+                    "Apelido2": "Arias",
+                    "DataNacemento": "1987-07-13",
+                    "Parentesco": "Hermana",
+                    "Sexo": "M"
+                },
+                {
+                    "NSS": "8888891",
+                    "Nome": "Celia",
+                    "Apelido1": "Pereiro",
+                    "Apelido2": "Lamela",
+                    "DataNacemento": "2000-10-05",
+                    "Parentesco": "Sobrina",
+                    "Sexo": "M"
+                }
+            ]
+        }
+    ]
+}

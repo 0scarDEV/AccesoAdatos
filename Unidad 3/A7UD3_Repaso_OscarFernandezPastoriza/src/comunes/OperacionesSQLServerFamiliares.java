@@ -1,8 +1,23 @@
 package comunes;
 
+import clases.AdaptadorEmpleado;
+import clases.Empleado;
 import clases.Familiar;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.lang.reflect.Type;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class OperacionesSQLServerFamiliares extends Operaciones {
     public OperacionesSQLServerFamiliares(Connection con) {
@@ -50,7 +65,7 @@ public class OperacionesSQLServerFamiliares extends Operaciones {
     // endregion
 
     // region E7_2
-    public void insertarFamiliar(String nssEmpregado, Familiar familiar) {
+    public boolean insertarFamiliar(String nssEmpregado, Familiar familiar) {
         crearProcedimientoExisteFamiliar();
         try {
             CallableStatement cs = con.prepareCall("{call prExisteFamiliar(?, ?, ?)}");
@@ -61,7 +76,7 @@ public class OperacionesSQLServerFamiliares extends Operaciones {
 
             if (cs.getBoolean(3)) {
                 System.err.println("Ya existe un familiar con el NSS " + familiar.getNss() + " para el empleado " + nssEmpregado);
-                return;
+                return false;
             }
 
             String sql =
@@ -81,6 +96,8 @@ public class OperacionesSQLServerFamiliares extends Operaciones {
             ps.setString(8, familiar.getParentesco());
             ps.setString(9, String.valueOf(familiar.getSexo()));
             ps.executeUpdate();
+
+            return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -124,6 +141,94 @@ public class OperacionesSQLServerFamiliares extends Operaciones {
         } catch (Exception e) {
             System.out.println("Error al crear el procedimiento prExisteFamiliar");
             e.printStackTrace();
+        }
+    }
+    // endregion
+
+    // region E7_3
+    //Inserta los familiares de los empleados que vengan de un json. Si hay varios familiares de un empleado con el mismo nss de familiar, se inserta el primero que que se encuentre. Se creará un json con los familiares errorneos que no se han podido insertar. El json de los familiares a insertar tiene la siguiente estructura:
+    public void insertarFamiliarJson(String nombreFichero, String nombreFicheroCambios){
+        Gson gson = new GsonBuilder().registerTypeAdapter(Empleado.class,new AdaptadorEmpleado()).create();
+
+        try{
+            JsonObject jsonObject = gson.fromJson(new FileReader(nombreFichero), JsonObject.class);
+            JsonArray jsonArray = jsonObject.getAsJsonArray("empleados");
+            Type tipoLista = new TypeToken<List<Empleado>>(){}.getType();
+            List<Empleado> empleados = gson.fromJson(jsonArray, tipoLista);
+            Map<String, List<Familiar>> familiaresCorrectos = new LinkedHashMap<>();
+            Map<String, List<Familiar>> familiaresErroneos = new LinkedHashMap<>();
+
+            for (Empleado empleado : empleados) {
+                for (Familiar familiar : empleado.getFamiliares()) {
+                    if (!insertarFamiliar(familiar.getNssEmpregado(), familiar)) {
+                        System.out.println("No se ha podido insertar el familiar: " + familiar.getNss());
+
+                        if (familiaresErroneos.containsKey(empleado.getNss())) {
+                            familiaresErroneos.get(empleado.getNss()).add(familiar);
+                        } else {
+                            List<Familiar> familiares = new ArrayList<>();
+                            familiares.add(familiar);
+                            familiaresErroneos.put(empleado.getNss(), familiares);
+                        }
+                    } else {
+                        System.out.println("El familiar " + familiar.getNss() + " se ha insertado correctamente");
+                        if (familiaresCorrectos.containsKey(empleado.getNss())) {
+                            familiaresCorrectos.get(empleado.getNss()).add(familiar);
+                        } else {
+                            List<Familiar> familiares = new ArrayList<>();
+                            familiares.add(familiar);
+                            familiaresCorrectos.put(empleado.getNss(), familiares);
+                        }
+                    }
+                }
+            }
+
+            crearJsonFamiliaresErroneos(familiaresCorrectos, familiaresErroneos, nombreFicheroCambios);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void crearJsonFamiliaresErroneos(Map<String, List<Familiar>> correctos, Map<String, List<Familiar>> erroneos, String nombreFichero) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonObject objetoEmpleados = new JsonObject();
+        JsonArray jsonArrayCorrectos = new JsonArray();
+        JsonArray jsonArrayErroneos = new JsonArray();
+
+        objetoEmpleados.add("familiaresInsertados", jsonArrayCorrectos);
+        objetoEmpleados.add("familiaresErroneos", jsonArrayErroneos);
+
+        try (FileWriter fileWriter = new FileWriter(nombreFichero)) {
+            insertarFamiliares(correctos, jsonArrayCorrectos);
+            insertarFamiliares(erroneos, jsonArrayErroneos);
+            gson.toJson(objetoEmpleados, fileWriter);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private void insertarFamiliares(Map<String, List<Familiar>> correctos, JsonArray jsonArrayCorrectos) {
+        for (Map.Entry<String, List<Familiar>> entry : correctos.entrySet()) {
+            JsonObject objetoEmpleado = new JsonObject();
+            objetoEmpleado.addProperty("NSS", entry.getKey());
+
+            JsonArray jsonArrayFamiliares = new JsonArray();
+            for (Familiar familiar : entry.getValue()) {
+                JsonObject familiarJson = new JsonObject();
+                familiarJson.addProperty("NSS", familiar.getNss());
+                familiarJson.addProperty("NSS_empregado", familiar.getNssEmpregado());
+                familiarJson.addProperty("nome", familiar.getNome());
+                familiarJson.addProperty("apelido1", familiar.getApelido1());
+                familiarJson.addProperty("apelido2", familiar.getApelido2());
+                familiarJson.addProperty("dataNacemento", familiar.getDataNacementoAsStr());
+                familiarJson.addProperty("parentesco", familiar.getParentesco());
+                familiarJson.addProperty("sexo", familiar.getSexo());
+                jsonArrayFamiliares.add(familiarJson);
+            }
+
+            objetoEmpleado.add("familiares", jsonArrayFamiliares);
+            jsonArrayCorrectos.add(objetoEmpleado);
         }
     }
     // endregion
