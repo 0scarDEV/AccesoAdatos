@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="gson-2.10.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/gson-2.10.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mssql-jdbc-11.2.0.jre18.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.27.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/" />
+    </SOURCES>
+  </library>
+</component>
