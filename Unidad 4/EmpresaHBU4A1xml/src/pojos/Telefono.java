@@ -5,6 +5,8 @@
  */
 package pojos;
 
+import java.util.Objects;
+
 /**
  *
  * @author ofernpast
@@ -46,5 +48,15 @@ public class Telefono {
                 "numero='" + numero + '\'' +
                 ", informacion='" + informacion + '\'' +
                 '}';
+    }
+
+    @Override public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Telefono telefono = (Telefono) o;
+        return Objects.equals(numero, telefono.numero);
+    }
+
+    @Override public int hashCode() {
+        return Objects.hashCode(numero);
     }
 }
