@@ -21,50 +21,41 @@ import java.util.HashSet;
  */
 public class OperacionesHB {
     private static SessionFactory sf;
-    private static Session s;
 
     public OperacionesHB() {
         sf = HibernateUtil.getSessionFactory();
     }
 
+    public Session openSession() {
+        return sf.openSession();
+    }
+
     public void liberarRecursos() {
-        if (s != null) s.close();
         sf.close();
     }
 
     // region INSERCIONES
-    public boolean insertarEmpregado(Empregado e) {
-        if (s == null) {
-            s = sf.openSession();
-        }
-        Transaction t = s.beginTransaction();
-        boolean flagInsercion = false;
+    public boolean insertarEmpregado(Session s, Empregado e) {
+        boolean flagInsercion;
 
         try {
             s.save(e);
-            t.commit();
             flagInsercion = true;
         } catch (HibernateException he) {
-            t.rollback();
-            he.printStackTrace();
+            flagInsercion = false;
         }
 
         return flagInsercion;
     }
 
-    public boolean insertarDepartamento(Departamento d) {
-        if (s == null) {
-            s = sf.openSession();
-        }
-        Transaction t = s.beginTransaction();
-        boolean flagInsercion = false;
+    public boolean insertarDepartamento(Session s, Departamento d) {
+        boolean flagInsercion;
 
         try {
             s.save(d);
-            t.commit();
             flagInsercion = true;
         } catch (HibernateException he) {
-            t.rollback();
+            flagInsercion = false;
             he.printStackTrace();
         }
 
@@ -73,10 +64,7 @@ public class OperacionesHB {
     // endregion
 
     // region LECTURA
-    public Departamento loadDepartamento(int numDepartamento) {
-        if (s == null) {
-            s = sf.openSession();
-        }
+    public Departamento loadDepartamento(Session s, int numDepartamento) {
         Departamento d;
         try {
             d = (Departamento) s.load(Departamento.class, numDepartamento);
@@ -89,60 +77,43 @@ public class OperacionesHB {
         return d;
     }
 
-    public Empregado getEmpregado(String nss) {
-        if (s == null) {
-            s = sf.openSession();
-        }
-        Empregado e = (Empregado) s.get(Empregado.class, nss);
-        return e;
+    public Empregado getEmpregado(Session s, String nss) {
+        return (Empregado) s.get(Empregado.class, nss);
     }
 
-    public void showEmpregado(String nss) {
-        if (s == null) {
-            s = sf.openSession();
-        }
+    public void showEmpregado(Session s, String nss) {
         Empregado e = (Empregado) s.get(Empregado.class, nss);
         System.out.println(e);
     }
     // endregion
 
     // region ELIMINAR
-    public boolean removeDepartamento(int numDepartamento) {
-        if (s == null) {
-            s = sf.openSession();
-        }
-        Transaction t = s.beginTransaction();
-        boolean flagBorrado = false;
+    public boolean removeDepartamento(Session s, int numDepartamento) {
+        boolean flagBorrado;
 
         try {
             Departamento d = (Departamento) s.get(Departamento.class, numDepartamento);
             System.out.println(d);
             s.delete("Eliminando " + d);
-            t.commit();
             flagBorrado = true;
         } catch (HibernateException he) {
-            t.rollback();
+            flagBorrado = false;
             he.printStackTrace();
         }
 
         return flagBorrado;
     }
 
-    public boolean removeEmpregado(String nss) {
-        if (s == null) {
-            s = sf.openSession();
-        }
-        Transaction t = s.beginTransaction();
-        boolean flagBorrado = false;
+    public boolean removeEmpregado(Session s, String nss) {
+        boolean flagBorrado;
 
         try {
             Empregado e = (Empregado) s.get(Empregado.class, nss);
             System.out.println("Eliminando " + e);
             s.delete(e);
-            t.commit();
             flagBorrado = true;
         } catch (HibernateException he) {
-            t.rollback();
+            flagBorrado = false;
             he.printStackTrace();
         }
 
@@ -150,66 +121,48 @@ public class OperacionesHB {
     }
     // endregion
 
-    public boolean modificarSalarioEmpleado(String nss, double nuevoSalario) {
-        if (s == null) {
-            s = sf.openSession();
-        }
+    public boolean modificarSalarioEmpleado(Session s, String nss, double nuevoSalario) {
         boolean flagModificacion = false;
-
-        Transaction t = s.beginTransaction();
         try {
-            Empregado e = getEmpregado(nss);
+            Empregado e = getEmpregado(s, nss);
             e.setSalario(nuevoSalario);
             System.out.println(e);
-            t.commit();
             flagModificacion = true;
         } catch (HibernateException he) {
-            t.rollback();
             he.printStackTrace();
         }
 
         return flagModificacion;
     }
 
-    public boolean addTelefonoEmpleado(String nss, HashSet<String> telefonos) {
-        if (s == null) {
-            s = sf.openSession();
-        }
+    public boolean addTelefonoEmpleado(Session s, String nss, HashSet<String> telefonos) {
         boolean flagModificacion = false;
 
-        Transaction t = s.beginTransaction();
         try {
             Empregado e = (Empregado) s.get(Empregado.class, nss);
 
             if (e != null) {
                 e.setTelefonos(telefonos);
-                t.commit();
                 System.out.println(e);
                 flagModificacion = true;
             }
         } catch (HibernateException he) {
-            t.rollback();
             he.printStackTrace();
         }
 
         return flagModificacion;
     }
 
-    public boolean removeTelefonoEmpleado(String nss, String telefono) {
-        if (s == null) {
-            s = sf.openSession();
-        }
-        Transaction t = s.beginTransaction();
-        boolean flagModificacion = false;
+    public boolean removeTelefonoEmpleado(Session s, String nss, String telefono) {
+        boolean flagModificacion;
 
         try {
             Empregado e = (Empregado) s.get(Empregado.class, nss);
             e.getTelefonos().remove(telefono);
             System.out.println(e);
-            t.commit();
             flagModificacion = true;
         } catch (HibernateException he) {
-            t.rollback();
+            flagModificacion = false;
         }
 
         return flagModificacion;

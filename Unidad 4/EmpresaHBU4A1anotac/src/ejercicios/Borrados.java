@@ -5,6 +5,9 @@
  */
 package ejercicios;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import utiles.OperacionesHB;
 
 /**
@@ -14,8 +17,18 @@ import utiles.OperacionesHB;
 public class Borrados {
     public static void main(String[] args) {
         OperacionesHB opHb = new OperacionesHB();
-        opHb.removeEmpregado("12345678Z");
-        opHb.removeDepartamento(2);
+        Session s = opHb.openSession();
+        Transaction t = s.beginTransaction();
+
+        try {
+            opHb.removeEmpregado(s,"12345678Z");
+            opHb.removeDepartamento(s,2);
+            t.commit();
+        } catch (HibernateException e) {
+            System.out.println("Error al borrar: " + e.getMessage());
+            t.rollback();
+        }
+
         opHb.liberarRecursos();
         System.exit(0);
     }
