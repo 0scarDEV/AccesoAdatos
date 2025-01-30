@@ -32,7 +32,7 @@ public class Empregado implements java.io.Serializable {
     private String apelido1;
     @Column(name = "Apelido_2", length = 25)
     private String apelido2;
-    @Column(name = "Salario", precision = 53, scale = 0)
+    @Column(name = "Salario", precision = 53)
     private Double salario;
     @Temporal(TemporalType.DATE)
     @Column(name = "Data_nacemento", length = 10)
@@ -40,12 +40,31 @@ public class Empregado implements java.io.Serializable {
     @Column(name = "Sexo", length = 1)
     private Character sexo;
 
-    // Mapeo de la colección de teléfonos como un componente
+
     @ElementCollection
-    @CollectionTable(name="TELEFONO", joinColumns=@JoinColumn(name = "NSS"))
+    @CollectionTable(name = "TELEFONO", joinColumns = @JoinColumn(name = "NSS"))
+    private Set<Telefono> telefonos = new HashSet<>();;
+
+    public Set<Telefono> getTelefonos() {
+        return telefonos;
+    }
+
+    public void setTelefonos(Set<Telefono> telefonos) {
+        this.telefonos = telefonos;
+    }
+    /* Mapeo de la colección de teléfonos como un componente
     @Column(name="Numero")
     private Set<String> telefonos;
-    
+
+    public Set<String> getTelefonos() {
+        return telefonos;
+    }
+
+    public void setTelefonos(Set<String> telefonos) {
+        this.telefonos = telefonos;
+    }
+    */
+
     public Empregado() {
     }
 
@@ -61,7 +80,6 @@ public class Empregado implements java.io.Serializable {
         this.salario = salario;
         this.dataNacemento = dataNacemento;
         this.sexo = sexo;
-        this.telefonos = new HashSet<>();
     }
 
     public String getNss() {
@@ -120,16 +138,16 @@ public class Empregado implements java.io.Serializable {
         this.sexo = sexo;
     }
 
-    public Set<String> getTelefonos() {
-        return telefonos;
-    }
-
-    public void setTelefonos(Set<String> telefonos) {
-        this.telefonos = telefonos;
-    }
-
-    @Override
-    public String toString() {
-        return "Empregado{" + "nss=" + nss + ", nome=" + nome + ", apelido1=" + apelido1 + ", apelido2=" + apelido2 + ", salario=" + salario + ", dataNacemento=" + dataNacemento + ", sexo=" + sexo + '}';
+    @Override public String toString() {
+        return "Empregado{" +
+                "nss='" + nss + '\'' +
+                ", nome='" + nome + '\'' +
+                ", apelido1='" + apelido1 + '\'' +
+                ", apelido2='" + apelido2 + '\'' +
+                ", salario=" + salario +
+                ", dataNacemento=" + dataNacemento +
+                ", sexo=" + sexo +
+                ", telefonos=" + telefonos +
+                '}';
     }
 }

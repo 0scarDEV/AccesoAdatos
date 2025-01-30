@@ -7,10 +7,8 @@ package utiles;
 
 import org.hibernate.HibernateException;
 import org.hibernate.ObjectNotFoundException;
-import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import pojos.Departamento;
 import pojos.Empregado;
 
@@ -20,43 +18,42 @@ import java.util.HashSet;
  * @author ofernpast
  */
 public class OperacionesHB {
-    private static SessionFactory sf;
+    protected static SessionFactory sf;
 
     public OperacionesHB() {
         sf = HibernateUtil.getSessionFactory();
-    }
-
-    public Session openSession() {
-        return sf.openSession();
     }
 
     public void liberarRecursos() {
         sf.close();
     }
 
+    public Session openSession() {
+        return sf.openSession();
+    }
+
     // region INSERCIONES
     public boolean insertarEmpregado(Session s, Empregado e) {
-        boolean flagInsercion;
+        boolean flagInsercion = false;
 
         try {
             s.save(e);
             flagInsercion = true;
         } catch (HibernateException he) {
-            flagInsercion = false;
+            System.out.println("Error al insertar Empregado");
         }
 
         return flagInsercion;
     }
 
     public boolean insertarDepartamento(Session s, Departamento d) {
-        boolean flagInsercion;
+        boolean flagInsercion = false;
 
         try {
             s.save(d);
             flagInsercion = true;
         } catch (HibernateException he) {
-            flagInsercion = false;
-            he.printStackTrace();
+            System.out.println("Error al insertar Departamento");
         }
 
         return flagInsercion;
@@ -89,7 +86,7 @@ public class OperacionesHB {
 
     // region ELIMINAR
     public boolean removeDepartamento(Session s, int numDepartamento) {
-        boolean flagBorrado;
+        boolean flagBorrado = false;
 
         try {
             Departamento d = (Departamento) s.get(Departamento.class, numDepartamento);
@@ -97,15 +94,14 @@ public class OperacionesHB {
             s.delete("Eliminando " + d);
             flagBorrado = true;
         } catch (HibernateException he) {
-            flagBorrado = false;
-            he.printStackTrace();
+            System.out.println("Error al eliminar Departamento");
         }
 
         return flagBorrado;
     }
 
     public boolean removeEmpregado(Session s, String nss) {
-        boolean flagBorrado;
+        boolean flagBorrado = false;
 
         try {
             Empregado e = (Empregado) s.get(Empregado.class, nss);
@@ -113,8 +109,7 @@ public class OperacionesHB {
             s.delete(e);
             flagBorrado = true;
         } catch (HibernateException he) {
-            flagBorrado = false;
-            he.printStackTrace();
+            System.out.println("Error al eliminar Empregado");
         }
 
         return flagBorrado;
@@ -123,38 +118,38 @@ public class OperacionesHB {
 
     public boolean modificarSalarioEmpleado(Session s, String nss, double nuevoSalario) {
         boolean flagModificacion = false;
+
         try {
             Empregado e = getEmpregado(s, nss);
             e.setSalario(nuevoSalario);
             System.out.println(e);
             flagModificacion = true;
         } catch (HibernateException he) {
-            he.printStackTrace();
+            System.out.println("Error al modificar salario");
         }
 
         return flagModificacion;
     }
 
-    public boolean addTelefonoEmpleado(Session s, String nss, HashSet<String> telefonos) {
+    public boolean setNumsTelefonosEmpleado(Session s, String nss, HashSet<String> telefonos) {
         boolean flagModificacion = false;
-
         try {
             Empregado e = (Empregado) s.get(Empregado.class, nss);
 
             if (e != null) {
-                e.setTelefonos(telefonos);
+                //e.setTelefonos(telefonos);
                 System.out.println(e);
                 flagModificacion = true;
             }
         } catch (HibernateException he) {
-            he.printStackTrace();
+            System.out.println("Error al establecer los teléfonos de los empleados");
         }
 
         return flagModificacion;
     }
 
-    public boolean removeTelefonoEmpleado(Session s, String nss, String telefono) {
-        boolean flagModificacion;
+    public boolean removeNumTelefonoEmpleado(Session s, String nss, String telefono) {
+        boolean flagModificacion = false;
 
         try {
             Empregado e = (Empregado) s.get(Empregado.class, nss);
@@ -162,7 +157,7 @@ public class OperacionesHB {
             System.out.println(e);
             flagModificacion = true;
         } catch (HibernateException he) {
-            flagModificacion = false;
+            System.out.println("Error al eliminar un teléfono de un empleado");
         }
 
         return flagModificacion;
