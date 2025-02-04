@@ -41,6 +41,36 @@
                 <property name="numero" column="Numero" type="java.lang.String" not-null="true"/>
                 <property name="informacion" column="Informacion" type="java.lang.String"/>
             </composite-element>
+
+            <!-- TODO: PEDIR A VIPO el fichero -->
         </set>
+
+        <list name="familiares" table="FAMILIAR">
+            <key column="NSS_Empregado" not-null="true"/>
+            <list-index column="Numero" base="1"/>
+            <composite-element class="pojos.Familiar">
+                <property name="nss" type="java.lang.String">
+                    <column name="nss" length="15" not-null="true"/>
+                </property>
+                <property name="nome" type="java.lang.String">
+                    <column name="nome" length="25" not-null="true"/>
+                </property>
+                <property name="apelido1">
+                    <column name="apelido1" length="25" not-null="true"/>
+                </property>
+                <property name="apelido2" type="java.lang.String">
+                    <column name="apelido2" length="25"/>
+                </property>
+                <property name="dataNacemento" type="date">
+                    <column name="dataNacemento" length="10"/>
+                </property>
+                <property name="parentesco" type="java.lang.String">
+                    <column name="parentesco" length="20" not-null="true"/>
+                </property>
+                <property name="sexo" type="java.lang.Character">
+                    <column name="sexo" length="1"/>
+                </property>
+            </composite-element>
+        </list>
     </class>
 </hibernate-mapping>
