@@ -3,11 +3,12 @@ package ejercicios;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojos.Familiar;
 import pojos.Telefono;
 import utiles.OperacionesHBtelefono;
 
+import java.sql.Date;
 import java.util.HashSet;
-import java.util.Set;
 
 public class Modificaciones {
     public static void main(String[] args) {
@@ -16,12 +17,18 @@ public class Modificaciones {
         Transaction t = s.beginTransaction();
 
         try {
+            /*
             System.out.println(opHb.modificarSalarioEmpleado(s,"12345678A", 2000));
             HashSet<Telefono> telefonos = new HashSet<>();
             telefonos.add(new Telefono("666666666"));
             telefonos.add(new Telefono("666666667"));
             opHb.setTelefonosEmpleado(s, "12345678A", telefonos);
             opHb.removeTelefonoEmpleado(s, "12345678A", new Telefono("666666666"));
+            */
+
+            Familiar f = new Familiar("12345678V", "Cristina", "Pastoriza", "Otero", new Date(1967, 12, 27), "Tia", 'M');
+            opHb.addFamiliar(s, "12345678A", f);
+            System.out.println("Familiar insertado correctamente.");
             t.commit();
         } catch (HibernateException e) {
             System.out.println("Error al modificar: " + e.getMessage());

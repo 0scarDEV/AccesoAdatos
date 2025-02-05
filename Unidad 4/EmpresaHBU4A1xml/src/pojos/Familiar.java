@@ -2,7 +2,6 @@ package pojos;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.time.LocalDate;
 
 public class Familiar implements Serializable {
     private String nss;

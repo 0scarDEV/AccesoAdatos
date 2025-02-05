@@ -33,7 +33,7 @@
             </key>
 
             <!-- Mapeo cuando en la base de datos únicamente teníamos el número de teléfono. Set<String> telefonos
-                <element column="Numero" type="java.lang.String" not-null="true" length="9"/>
+            <element column="Numero" type="java.lang.String" not-null="true" length="9"/>
             -->
 
             <!-- Mapeo cuando en la base de datos teníamos el número de teléfono y el tipo de teléfono. Set<Telefono> telefonos -->
@@ -41,9 +41,15 @@
                 <property name="numero" column="Numero" type="java.lang.String" not-null="true"/>
                 <property name="informacion" column="Informacion" type="java.lang.String"/>
             </composite-element>
-
-            <!-- TODO: PEDIR A VIPO el fichero -->
         </set>
+
+        <!--B Mapeo de telefono (nuemro e infromacion) como set de componentes
+        <map name="telefonos" table="TELEFONO">
+            <key column="NSS" not-null="true"/>
+            <map-key type="string" column="Numero"/>
+            <element column="Informacion" type="string"/>
+        </map>
+         -->
 
         <list name="familiares" table="FAMILIAR">
             <key column="NSS_Empregado" not-null="true"/>

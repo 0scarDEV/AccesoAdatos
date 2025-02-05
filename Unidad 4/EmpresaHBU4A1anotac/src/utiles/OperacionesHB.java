@@ -11,8 +11,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import pojos.Departamento;
 import pojos.Empregado;
+import pojos.Familiar;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author ofernpast
@@ -161,5 +163,14 @@ public class OperacionesHB {
         }
 
         return flagModificacion;
+    }
+
+    public boolean addFamiliar(Session s, String nss, Familiar familiar) {
+        Empregado empregado = (Empregado) s.get(Empregado.class, nss);
+        if (empregado != null) {
+            empregado.getFamiliares().add(familiar);
+            return true;
+        }
+        return false;
     }
 }
