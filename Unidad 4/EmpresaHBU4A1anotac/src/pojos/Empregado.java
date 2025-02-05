@@ -61,8 +61,6 @@ public class Empregado implements java.io.Serializable {
     //@OrderColumn(name = "Numero")
     private List<Familiar> familiares = new ArrayList<>();
 
-    
-
     public List<Familiar> getFamiliares() {
         return familiares;
     }
@@ -70,6 +68,20 @@ public class Empregado implements java.io.Serializable {
     public void setFamiliares(List<Familiar> familiares) {
         this.familiares = familiares;
     }
+
+    @ElementCollection
+    @CollectionTable(name = "AFICION", joinColumns = @JoinColumn(name = "NSS_Empregado"))
+    @Column(name = "Aficion", nullable = false)
+    Collection<String> aficiones = new ArrayList<>();
+
+    public Collection<String> getAficiones() {
+        return aficiones;
+    }
+
+    public void setAficiones(Collection<String> aficiones) {
+        this.aficiones = aficiones;
+    }
+    // EMPREGADO
 
     public Empregado() {
     }

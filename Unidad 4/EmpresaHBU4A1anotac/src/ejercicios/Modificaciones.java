@@ -29,8 +29,14 @@ public class Modificaciones {
 
             // FAMILIAR
             Familiar f = new Familiar("12345678V", "Cristina", "Pastoriza", "Otero", new Date(1967, 12, 27), "Tia", 'M');
-            opHb.addFamiliar(s, "87654321A", f);
+            //opHb.addFamiliar(s, "87654321A", f);
             System.out.println("Familiar insertado correctamente.");
+
+            // AFICION
+            opHb.addAficion(s, "87654321A", "Cine");
+            System.out.println("Aficion insertada correctamente");
+
+            // Commit
             t.commit();
         } catch (HibernateException e) {
             System.out.println("Error al modificar: " + e.getMessage());
