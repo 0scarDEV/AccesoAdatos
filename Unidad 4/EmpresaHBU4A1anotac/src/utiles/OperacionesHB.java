@@ -168,6 +168,7 @@ public class OperacionesHB {
     public boolean addFamiliar(Session s, String nss, Familiar familiar) {
         Empregado empregado = (Empregado) s.get(Empregado.class, nss);
         if (empregado != null) {
+            familiar.setNumero(empregado.getFamiliares().size() + 1);
             empregado.getFamiliares().add(familiar);
             return true;
         }

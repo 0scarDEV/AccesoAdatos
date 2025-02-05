@@ -9,6 +9,9 @@ import java.util.Date;
 
 @Embeddable
 public class Familiar implements Serializable {
+    @Column(name = "Numero", nullable = false)
+    private Integer numero;
+
     @Column(name = "NSS", length = 15, nullable = false)
     private String nss;
 
@@ -96,5 +99,13 @@ public class Familiar implements Serializable {
 
     public void setSexo(Character sexo) {
         this.sexo = sexo;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
     }
 }

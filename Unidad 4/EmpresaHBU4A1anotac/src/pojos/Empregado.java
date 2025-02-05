@@ -1,6 +1,8 @@
 package pojos;
 // Generated 23 ene. 2025 9:06:45 by Hibernate Tools 4.3.1
 
+import org.hibernate.annotations.ListIndexBase;
+
 import java.util.*;
 import javax.persistence.*;
 
@@ -56,7 +58,7 @@ public class Empregado implements java.io.Serializable {
 
     @ElementCollection
     @CollectionTable(name="FAMILIAR", joinColumns = @JoinColumn(name = "NSS_Empregado"))
-    @OrderColumn(name = "Numero")
+    //@OrderColumn(name = "Numero")
     private List<Familiar> familiares = new ArrayList<>();
 
     public List<Familiar> getFamiliares() {

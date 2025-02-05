@@ -17,17 +17,19 @@ public class Modificaciones {
         Transaction t = s.beginTransaction();
 
         try {
-            /*
+            // SALARIO
             System.out.println(opHb.modificarSalarioEmpleado(s,"12345678A", 2000));
+
+            // TELEFONO
             HashSet<Telefono> telefonos = new HashSet<>();
             telefonos.add(new Telefono("666666666"));
             telefonos.add(new Telefono("666666667"));
             opHb.setTelefonosEmpleado(s, "12345678A", telefonos);
             opHb.removeTelefonoEmpleado(s, "12345678A", new Telefono("666666666"));
-            */
 
+            // FAMILIAR
             Familiar f = new Familiar("12345678V", "Cristina", "Pastoriza", "Otero", new Date(1967, 12, 27), "Tia", 'M');
-            opHb.addFamiliar(s, "12345678A", f);
+            opHb.addFamiliar(s, "87654321A", f);
             System.out.println("Familiar insertado correctamente.");
             t.commit();
         } catch (HibernateException e) {
