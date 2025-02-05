@@ -181,4 +181,13 @@ public class OperacionesHB {
         }
         return false;
     }
+
+    public boolean addLugar(Session s, int numDepartamento, String lugar) {
+        Departamento d = (Departamento) s.get(Departamento.class, numDepartamento);
+        if (d != null) {
+            d.getLugares().add(lugar);
+            return true;
+        }
+        return false;
+    }
 }

@@ -11,5 +11,13 @@
         <property name="nomeDepartamento" type="string">
             <column name="Nome_departamento" length="25" not-null="true" unique="true" />
         </property>
+
+        <idbag name="lugares" table="LUGAR">
+            <collection-id type="java.lang.Integer" column="id">
+                <generator class="increment"/>
+            </collection-id>
+            <key column="num_departamento" not-null="true"/>
+            <element column="lugar" type="java.lang.String" not-null="true"/>
+        </idbag>
     </class>
 </hibernate-mapping>

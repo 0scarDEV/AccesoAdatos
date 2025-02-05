@@ -21,10 +21,14 @@ public class Modificaciones {
             telefonos.add(new Telefono("123456789"));
             telefonos.add(new Telefono("123456788"));
             //opHb.setTelefonosEmpleado(s, "12345678A", telefonos);
-
             //opHb.removeTelefonoEmpleado(s, "12345678A", new Telefono("123456788"));
 
-            opHb.addAficion(s, "12345678A", "Futbol");
+            // opHb.addAficion(s, "12345678A", "Futbol");
+            System.out.println("Aficion añadida");
+
+            opHb.addLugar(s, 1, "Coruña");
+            System.out.println("Lugar añadido");
+
             t.commit();
         } catch (HibernateException e) {
             t.rollback();
