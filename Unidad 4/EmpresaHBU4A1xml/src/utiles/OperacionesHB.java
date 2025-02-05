@@ -172,4 +172,13 @@ public class OperacionesHB {
         }
         return false;
     }
+
+    public boolean addAficion(Session s, String nss, String aficion) {
+        Empregado empregado = (Empregado) s.get(Empregado.class, nss);
+        if (empregado != null) {
+            empregado.getAficiones().add(aficion);
+            return true;
+        }
+        return false;
+    }
 }

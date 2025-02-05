@@ -90,7 +90,20 @@ public class Empregado implements java.io.Serializable {
         this.sexo = sexo;
     }
 
-    
+    @Override public String toString() {
+        return "Empregado{" +
+                "nss='" + nss + '\'' +
+                ", nome='" + nome + '\'' +
+                ", apelido1='" + apelido1 + '\'' +
+                ", apelido2='" + apelido2 + '\'' +
+                ", salario=" + salario +
+                ", dataNacemento=" + dataNacemento +
+                ", sexo=" + sexo +
+                ", telefonos=" + telefonos +
+                '}';
+    }
+
+    // region TELEFONO
     /*
         Mapeo cuando en la base de datos únicamente teníamos el número de teléfono.
     * private Set<String> telefonos;
@@ -122,7 +135,9 @@ public class Empregado implements java.io.Serializable {
     public void setTelefonos(Set<Telefono> telefonos) {
         this.telefonos = telefonos;
     }
+// endregion
 
+    // region FAMILIAR
     private List<Familiar> familiares = new ArrayList<>();
 
     public List<Familiar> getFamiliares() {
@@ -132,17 +147,18 @@ public class Empregado implements java.io.Serializable {
     public void setFamiliares(List<Familiar> familiares) {
         this.familiares = familiares;
     }
+    // endregion
 
-    @Override public String toString() {
-        return "Empregado{" +
-                "nss='" + nss + '\'' +
-                ", nome='" + nome + '\'' +
-                ", apelido1='" + apelido1 + '\'' +
-                ", apelido2='" + apelido2 + '\'' +
-                ", salario=" + salario +
-                ", dataNacemento=" + dataNacemento +
-                ", sexo=" + sexo +
-                ", telefonos=" + telefonos +
-                '}';
+
+    // region AFICION
+    private Collection<String> aficiones = new ArrayList<>();
+
+    public Collection<String> getAficiones() {
+        return aficiones;
     }
+
+    public void setAficiones(Collection<String> aficiones) {
+        this.aficiones = aficiones;
+    }
+    // endregion
 }

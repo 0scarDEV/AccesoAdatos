@@ -78,5 +78,11 @@
                 </property>
             </composite-element>
         </list>
+
+        <!-- mapeo de las aficiones en lugar de componentes -->
+        <bag name="aficiones" table="AFICION">
+            <key column="Nss_Empregado" not-null="true"/>
+            <element column="Aficion" type="string" not-null="true"/>
+        </bag>
     </class>
 </hibernate-mapping>
