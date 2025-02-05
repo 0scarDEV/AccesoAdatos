@@ -36,6 +36,10 @@ public class Modificaciones {
             //opHb.addAficion(s, "87654321A", "Cine");
             System.out.println("Aficion insertada correctamente");
 
+            // LUGAR
+            opHb.addLugar(s, 1, "Sala de reuniones");
+            System.out.println("Lugar agregado correctamente");
+
             // Commit
             t.commit();
         } catch (HibernateException e) {
