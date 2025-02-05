@@ -53,3 +53,26 @@ CREATE TABLE TELEFONO (
 
 ALTER TABLE TELEFONO
 	ADD Informacion varchar(15) null;
+
+CREATE TABLE FAMILIAR (
+	NSS_Empregado varchar(15) not null,
+	Numero int not null,
+	NSS varchar(15) not null,
+	nome varchar(25) not null,
+	apelido1 varchar(25) not null,
+	apelido2 varchar(25),
+	datanacemento date,
+	parentesco varchar(20) not null,
+	sexo char(1) not null,
+
+	CONSTRAINT PK_FAMILIAR PRIMARY KEY (NSS_Empregado, Numero),
+	CONSTRAINT FK_FAMILIAR_EMPLEADO FOREIGN KEY (NSS_Empregado) REFERENCES EMPREGADO(NSS)
+)
+
+CREATE TABLE AFICION (
+    Nss_Empregado varchar(15) not null,
+    Aficion varchar(50) not null,
+
+    CONSTRAINT PK_AFICION PRIMARY KEY (Nss_Empregado, Aficion),
+    CONSTRAINT FK_NSS_AFICION FOREIGN KEY (Nss_Empregado) REFERENCES EMPREGADO(NSS)
+)
