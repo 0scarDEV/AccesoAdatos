@@ -33,7 +33,7 @@ public class Modificaciones {
             System.out.println("Familiar insertado correctamente.");
 
             // AFICION
-            opHb.addAficion(s, "87654321A", "Cine");
+            //opHb.addAficion(s, "87654321A", "Cine");
             System.out.println("Aficion insertada correctamente");
 
             // Commit
