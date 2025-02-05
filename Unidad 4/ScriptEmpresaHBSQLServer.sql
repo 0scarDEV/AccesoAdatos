@@ -76,3 +76,13 @@ CREATE TABLE AFICION (
     CONSTRAINT PK_AFICION PRIMARY KEY (Nss_Empregado, Aficion),
     CONSTRAINT FK_NSS_AFICION FOREIGN KEY (Nss_Empregado) REFERENCES EMPREGADO(NSS)
 )
+
+CREATE TABLE LUGAR (
+    id int not null,
+    Num_Departamento int not null,
+    lugar varchar(15) not null,
+
+    CONSTRAINT PK_LUGAR PRIMARY KEY (id),
+    CONSTRAINT UQ_LUGAR UNIQUE (Num_Departamento, lugar),
+    CONSTRAINT FK_LUGAR_DEPARTAMENTO FOREIGN KEY (Num_Departamento) REFERENCES DEPARTAMENTO(Num_Departamento)
+)
