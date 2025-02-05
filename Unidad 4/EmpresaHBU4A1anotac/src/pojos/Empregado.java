@@ -61,6 +61,8 @@ public class Empregado implements java.io.Serializable {
     //@OrderColumn(name = "Numero")
     private List<Familiar> familiares = new ArrayList<>();
 
+    
+
     public List<Familiar> getFamiliares() {
         return familiares;
     }
