@@ -9,6 +9,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import pojos.Enderezo;
 import pojos.Familiar;
 import utiles.OperacionesHB;
 import pojos.Departamento;
@@ -25,7 +26,7 @@ public class Inserciones {
     public static void main(String[] args) {
         OperacionesHB opHB = new OperacionesHB();
         Session s = opHB.getSession();
-        Transaction transaction = s.beginTransaction();
+        Transaction t = s.beginTransaction();
 
         /*
         try {
@@ -55,13 +56,19 @@ public class Inserciones {
             System.out.println("Error al insertar empleado o departamento");
         }*/
 
+        Empregado e = new Empregado("12345678O", "Oscar", "Pastoriza", "Otero", 2000.0, new Date(1999, 12, 27), 'M');
+        e.setEnderezo(new Enderezo("Canibelos", "36930", "Bueu", "Pontevedra"));
         Familiar f = new Familiar("12345678V", "Cristina", "Pastoriza", "Otero", new Date(1967, 12, 27), "Tia", 'M');
         try {
-            opHB.addFamiliar(s, "12345678A", f);
-            transaction.commit();
+            opHB.insertarEmpregado(s, e);
+            System.out.println("Empregado insertado correctamente");
+
+            //opHB.addFamiliar(s, "12345678O", f);
             System.out.println("Familiar insertado correctamente");
+
+            t.commit();
         } catch (HibernateException he) {
-            transaction.rollback();
+            t.rollback();
             System.err.println("Error al insertar el familiar.");
         }
         

@@ -15,8 +15,7 @@ import javax.persistence.*;
         catalog = "EmpresaHB"
 )
 public class Empregado implements java.io.Serializable {
-    @Id
-    @Column(name = "NSS", unique = true, nullable = false, length = 15)
+    @Id @Column(name = "NSS", unique = true, nullable = false, length = 15)
     private String nss;
     @Column(name = "Nome", nullable = false, length = 25)
     private String nome;
@@ -101,6 +100,19 @@ public class Empregado implements java.io.Serializable {
         this.mapHorasExtra = mapHorasExtra;
     }
     // endregion
+
+    // region ENDEREZO
+    @Embedded
+    private Enderezo enderezo;
+
+    public Enderezo getEnderezo() {
+        return enderezo;
+    }
+
+    public void setEnderezo(Enderezo enderezo) {
+        this.enderezo = enderezo;
+    }
+// endregion
 
     // EMPREGADO
     public Empregado() {

@@ -94,5 +94,21 @@
             <map-key column="Data" type="java.sql.Date"/> <!-- CLAVE DEL MAPA -->
             <element column="Horas" type="java.lang.Double" not-null="true"/> <!-- VALOR DEL MAPA (simple) -->
         </map>
+
+        <!-- mapeo del enderezo -->
+        <component name="enderezo" class="pojos.Enderezo">
+            <property name="rua" type="java.lang.String">
+                <column name="Rua" length="30"/>
+            </property>
+            <property name="cp" type="java.lang.String">
+                <column name="CP" length="5"/>
+            </property>
+            <property name="localidade" type="java.lang.String">
+                <column name="Localidade" length="30"/>
+            </property>
+            <property name="provincia" type="java.lang.String">
+                <column name="Provincia" length="30"/>
+            </property>
+        </component>
     </class>
 </hibernate-mapping>
