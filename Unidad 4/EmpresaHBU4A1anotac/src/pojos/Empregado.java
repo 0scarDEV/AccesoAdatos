@@ -32,6 +32,7 @@ public class Empregado implements java.io.Serializable {
     @Column(name = "Sexo", length = 1)
     private Character sexo;
 
+    // region TELEFONO
     @ElementCollection
     @CollectionTable(name = "TELEFONO", joinColumns = @JoinColumn(name = "NSS"))
     private Set<Telefono> telefonos = new HashSet<>();;
@@ -55,7 +56,9 @@ public class Empregado implements java.io.Serializable {
         this.telefonos = telefonos;
     }
     */
+    // endregion TELEFONO
 
+    // region FAMILIAR
     @ElementCollection
     @CollectionTable(name="FAMILIAR", joinColumns = @JoinColumn(name = "NSS_Empregado"))
     //@OrderColumn(name = "Numero")
@@ -68,7 +71,9 @@ public class Empregado implements java.io.Serializable {
     public void setFamiliares(List<Familiar> familiares) {
         this.familiares = familiares;
     }
+    // endregion
 
+    // region AFICION
     @ElementCollection
     @CollectionTable(name = "AFICION", joinColumns = @JoinColumn(name = "NSS_Empregado"))
     @Column(name = "Aficion", nullable = false)
@@ -81,8 +86,23 @@ public class Empregado implements java.io.Serializable {
     public void setAficiones(Collection<String> aficiones) {
         this.aficiones = aficiones;
     }
-    // EMPREGADO
+    // endregion
 
+    // region HORAS EXTRA
+    @ElementCollection @CollectionTable(name = "HORASEXTRA", joinColumns = @JoinColumn(name = "NSS_Empregado"))
+    @MapKeyColumn(name = "Data") @Column(name = "Horas", nullable = false) @OrderBy("Data")
+    private SortedMap<java.sql.Date, Double> mapHorasExtra = new TreeMap<>();
+
+    public SortedMap<java.sql.Date, Double> getMapHorasExtra() {
+        return mapHorasExtra;
+    }
+
+    public void setMapHorasExtra(SortedMap<java.sql.Date, Double> mapHorasExtra) {
+        this.mapHorasExtra = mapHorasExtra;
+    }
+    // endregion
+
+    // EMPREGADO
     public Empregado() {
     }
 

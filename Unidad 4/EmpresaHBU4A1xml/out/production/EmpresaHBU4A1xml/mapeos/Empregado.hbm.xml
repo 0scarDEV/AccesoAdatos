@@ -28,7 +28,7 @@
         </property>
 
         <set name="telefonos" table="TELEFONO">
-            <key>
+            <key>   <!-- CLAVE FORANEA -->
                 <column name="NSS" not-null="true"/>
             </key>
 
@@ -52,8 +52,9 @@
          -->
 
         <list name="familiares" table="FAMILIAR">
-            <key column="NSS_Empregado" not-null="true"/>
+            <key column="NSS_Empregado" not-null="true"/> <!-- CLAVE FORANEA -->
             <list-index column="Numero" base="1"/>
+            <!-- VALOR (compuesto) -->
             <composite-element class="pojos.Familiar">
                 <property name="nss" type="java.lang.String">
                     <column name="nss" length="15" not-null="true"/>
@@ -81,8 +82,18 @@
 
         <!-- mapeo de las aficiones en lugar de componentes -->
         <bag name="aficiones" table="AFICION">
-            <key column="Nss_Empregado" not-null="true"/>
-            <element column="Aficion" type="string" not-null="true"/>
+            <key column="Nss_Empregado" not-null="true"/> <!-- CLAVE FORÁNEA -->
+            <element column="Aficion" type="string" not-null="true"/> <!-- VALOR (simple) -->
         </bag>
+
+        <!-- mapeo de las horas extra -->
+        <map name="mapHorasExtra" table="HORASEXTRA" sort="natural">
+            <key>   <!-- CLAVE FORANEA -->
+                <column name="NSS_Empregado" not-null="true"/>
+            </key>
+            <map-key column="Data" type="java.sql.Date"/> <!-- CLAVE DEL MAPA -->
+            <element column="Horas" type="java.lang.Double" not-null="true"/> <!-- VALOR DEL MAPA (simple) -->
+        </map>
+
     </class>
 </hibernate-mapping>

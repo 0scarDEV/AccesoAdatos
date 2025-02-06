@@ -8,6 +8,7 @@ import pojos.Telefono;
 import utiles.OperacionesHBtelefono;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 
 public class Modificaciones {
@@ -37,8 +38,12 @@ public class Modificaciones {
             System.out.println("Aficion insertada correctamente");
 
             // LUGAR
-            opHb.addLugar(s, 1, "Pontevedra");
+            //opHb.addLugar(s, 1, "Pontevedra");
             System.out.println("Lugar agregado correctamente");
+
+            // HORASEXTRA
+            opHb.addHorasExtra(s, "12345678A", Date.valueOf(LocalDate.of(2025, 2, 5)), 4.5);
+            System.out.println("Horas extra añadidas correctamente");
 
             // Commit
             t.commit();
