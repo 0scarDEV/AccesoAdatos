@@ -86,14 +86,13 @@
             <element column="Aficion" type="string" not-null="true"/> <!-- VALOR (simple) -->
         </bag>
 
-        <!-- mapeo de las horas extra -->
-        <map name="mapHorasExtra" table="HORASEXTRA" sort="natural">
+        <!-- mapeo de las horas extra en el orden natural -->
+        <map name="mapHorasExtra" table="HORASEXTRA" sort="utiles.OrderData"> <!-- orden natural sort="natural" -->
             <key>   <!-- CLAVE FORANEA -->
                 <column name="NSS_Empregado" not-null="true"/>
             </key>
             <map-key column="Data" type="java.sql.Date"/> <!-- CLAVE DEL MAPA -->
             <element column="Horas" type="java.lang.Double" not-null="true"/> <!-- VALOR DEL MAPA (simple) -->
         </map>
-
     </class>
 </hibernate-mapping>

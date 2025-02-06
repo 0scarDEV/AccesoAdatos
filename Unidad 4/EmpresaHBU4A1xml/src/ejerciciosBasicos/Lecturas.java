@@ -22,8 +22,11 @@ public class Lecturas {
         try {
             //System.out.println(opHb.getEmpregado("87654321A"));
             //opHb.loadDepartamento(5);
-            opHb.showEmpregado(opHb.getSession(), "87654321B");
+            //opHb.showEmpregado(s, "87654321B");
             //opHb.loadDepartamento(8);
+
+            opHb.viewHorasExtra(s, "12345678A");
+
             t.commit();
         } catch (HibernateException e) {
             t.rollback();

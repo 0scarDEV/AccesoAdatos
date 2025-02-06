@@ -15,6 +15,7 @@ import pojos.Familiar;
 
 import java.sql.Date;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -206,9 +207,16 @@ public class OperacionesHB {
     public void viewHorasExtra(Session s, String nss) {
         Empregado empregado = (Empregado) s.get(Empregado.class, nss);
         if (empregado != null) {
-            System.out.println(empregado.getMapHorasExtra());
+            Map<Date, Double> mapaHoras =empregado.getMapHorasExtra();
+            if (mapaHoras != null && !mapaHoras.isEmpty()) {
+                for (Map.Entry<Date, Double> entry : mapaHoras.entrySet()) {
+                    System.out.println("Fecha: " + entry.getKey() + ", Horas: " + entry.getValue());
+                }
+            } else {
+                System.out.println("No hay horas extras registradas para este empleado.");
+            }
         } else {
-            System.err.println("ERROR. Empleado no encontrado");
+            System.err.println("ERROR. Empleado con nss " + nss + " no encontrado");
         }
     }
 }
