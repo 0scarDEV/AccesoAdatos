@@ -12,8 +12,7 @@ public class Departamento implements java.io.Serializable {
     private int numDepartamento;
     private String nomeDepartamento;
 
-    public Departamento() {
-    }
+    public Departamento() {}
 
     public Departamento(String nomeDepartamento) {
         this.nomeDepartamento = nomeDepartamento;

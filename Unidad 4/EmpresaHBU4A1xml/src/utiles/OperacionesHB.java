@@ -13,6 +13,8 @@ import pojos.Departamento;
 import pojos.Empregado;
 import pojos.Familiar;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 
 /**
@@ -186,6 +188,15 @@ public class OperacionesHB {
         Departamento d = (Departamento) s.get(Departamento.class, numDepartamento);
         if (d != null) {
             d.getLugares().add(lugar);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean addHoraExtra(Session s, String nss, LocalDate data, double numHoras) {
+        Empregado e = (Empregado) s.get(Empregado.class, nss);
+        if (e != null) {
+            e.getMapHorasExtra().put(Date.valueOf(data), numHoras);
             return true;
         }
         return false;

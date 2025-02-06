@@ -161,4 +161,16 @@ public class Empregado implements java.io.Serializable {
         this.aficiones = aficiones;
     }
     // endregion
+
+    // region HORASEXTRA
+    private SortedMap<Date, Double> mapHorasExtra = new TreeMap<>();
+
+    public SortedMap<Date, Double> getMapHorasExtra() {
+        return mapHorasExtra;
+    }
+
+    public void setMapHorasExtra(SortedMap<Date, Double> mapHorasExtra) {
+        this.mapHorasExtra = mapHorasExtra;
+    }
+    // endregion
 }
