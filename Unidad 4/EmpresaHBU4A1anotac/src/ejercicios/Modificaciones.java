@@ -37,7 +37,7 @@ public class Modificaciones {
             System.out.println("Aficion insertada correctamente");
 
             // LUGAR
-            opHb.addLugar(s, 1, "Sala de reuniones");
+            opHb.addLugar(s, 1, "Pontevedra");
             System.out.println("Lugar agregado correctamente");
 
             // Commit

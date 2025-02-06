@@ -3,7 +3,9 @@ package pojos;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.CollectionId;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,10 +29,9 @@ public class Departamento implements java.io.Serializable {
     private String nomeDepartamento;
 
     /* Mapeo de los lugares */
-    @ElementCollection
-    @CollectionTable(name = "LUGAR", joinColumns = @JoinColumn(name = "Num_departamento"))
-    @Column(name = "lugar", length = 15, nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ElementCollection @CollectionTable(name = "LUGAR", joinColumns = @JoinColumn(name = "Num_departamento"))
+    @Column(name = "lugar", length = 15, nullable = false) @GenericGenerator(name ="increment", strategy = "increment")
+    @CollectionId(columns = @Column(name = "id"), generator = "increment", type = @Type(type = "int"))
     Collection<String> lugares = new ArrayList<>();
 
     public Collection<String> getLugares() {
