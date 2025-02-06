@@ -42,8 +42,9 @@ public class Modificaciones {
             System.out.println("Lugar agregado correctamente");
 
             // HORASEXTRA
-            opHb.addHorasExtra(s, "12345678A", Date.valueOf(LocalDate.of(2025, 2, 5)), 4.5);
+            opHb.addHorasExtra(s, "12345678A", Date.valueOf(LocalDate.of(2025, 2, 8)), 4.5);
             System.out.println("Horas extra añadidas correctamente");
+            opHb.viewHorasExtra(s, "12345678A");
 
             // Commit
             t.commit();

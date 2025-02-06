@@ -202,4 +202,13 @@ public class OperacionesHB {
         }
         return false;
     }
+
+    public void viewHorasExtra(Session s, String nss) {
+        Empregado empregado = (Empregado) s.get(Empregado.class, nss);
+        if (empregado != null) {
+            System.out.println(empregado.getMapHorasExtra());
+        } else {
+            System.err.println("ERROR. Empleado no encontrado");
+        }
+    }
 }
