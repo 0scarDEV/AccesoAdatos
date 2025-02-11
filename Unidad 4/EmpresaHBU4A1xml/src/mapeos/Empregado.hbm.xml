@@ -43,7 +43,7 @@
             </composite-element>
         </set>
 
-        <!--B Mapeo de telefono (nuemro e infromacion) como set de componentes
+        <!--B Mapeo de telefono (nuemro e infromacion) como mapa
         <map name="telefonos" table="TELEFONO">
             <key column="NSS" not-null="true"/>
             <map-key type="string" column="Numero"/>
