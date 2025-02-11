@@ -9,11 +9,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import pojos.Enderezo;
-import pojos.Familiar;
+import pojos.*;
 import utiles.OperacionesHB;
-import pojos.Departamento;
-import pojos.Empregado;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -57,21 +54,25 @@ public class Inserciones {
         }*/
 
         Empregado e = new Empregado("12345678O", "Oscar", "Pastoriza", "Otero", 2000.0, new Date(1999, 12, 27), 'M');
+        Vehiculo v = new Vehiculo("12345678O", "1061GVD", "Peugeot", "207", new Date(2010, 7, 17));
+
         e.setEnderezo(new Enderezo("Canibelos", "36930", "Bueu", "Pontevedra"));
         Familiar f = new Familiar("12345678V", "Cristina", "Pastoriza", "Otero", new Date(1967, 12, 27), "Tia", 'M');
         try {
-            opHB.insertarEmpregado(s, e);
+            //opHB.insertarEmpregado(s, e);
             System.out.println("Empregado insertado correctamente");
 
             //opHB.addFamiliar(s, "12345678O", f);
             System.out.println("Familiar insertado correctamente");
+
+            opHB.setVehiculoToEmpregado(s, "12345678O", v);
 
             t.commit();
         } catch (HibernateException he) {
             t.rollback();
             System.err.println("Error al insertar el familiar.");
         }
-        
+
         opHB.liberarRecursos();
         System.exit(0);
     }

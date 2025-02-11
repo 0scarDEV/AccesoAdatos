@@ -3,7 +3,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 23 ene. 2025 9:18:23 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="pojos.Empregado" table="EMPREGADO" schema="dbo" catalog="EmpresaHB" optimistic-lock="version">
+    <class name="pojos.Empregado" table="EMPREGADO" schema="dbo" catalog="EmpresaHB">
         <id name="nss" type="string">
             <column name="NSS" length="15"/>
             <generator class="assigned"/>
@@ -86,8 +86,8 @@
             <element column="Aficion" type="string" not-null="true"/> <!-- VALOR (simple) -->
         </bag>
 
-        <!-- mapeo de las horas extra -->
-        <map name="mapHorasExtra" table="HORASEXTRA" sort="natural">
+        <!-- mapeo de las horas extra en el orden natural -->
+        <map name="mapHorasExtra" table="HORASEXTRA" sort="utiles.OrderData"> <!-- orden natural sort="natural" -->
             <key>   <!-- CLAVE FORANEA -->
                 <column name="NSS_Empregado" not-null="true"/>
             </key>
@@ -95,5 +95,23 @@
             <element column="Horas" type="java.lang.Double" not-null="true"/> <!-- VALOR DEL MAPA (simple) -->
         </map>
 
+        <!-- mapeo del enderezo -->
+        <component name="enderezo" class="pojos.Enderezo">
+            <property name="rua" type="java.lang.String">
+                <column name="Rua" length="30"/>
+            </property>
+            <property name="cp" type="java.lang.String">
+                <column name="CP" length="5"/>
+            </property>
+            <property name="localidade" type="java.lang.String">
+                <column name="Localidade" length="30"/>
+            </property>
+            <property name="provincia" type="java.lang.String">
+                <column name="Provincia" length="30"/>
+            </property>
+        </component>
+
+        <!-- Mapeo de la relación UNO a UNO con VEHICULO -->
+        <one-to-one name="vehiculo" class="pojos.Vehiculo" cascade="all"/>
     </class>
 </hibernate-mapping>

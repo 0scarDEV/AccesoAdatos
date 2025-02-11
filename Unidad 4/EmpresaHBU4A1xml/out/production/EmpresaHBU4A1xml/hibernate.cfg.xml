@@ -48,5 +48,6 @@ Contributor(s):
     <mapping resource="mapeos/Departamento.hbm.xml"/>
     <mapping resource="mapeos/Empregado.hbm.xml"/>
     <mapping resource="mapeos/Proxecto.hbm.xml"/>
+    <mapping resource="mapeos/Vehiculo.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

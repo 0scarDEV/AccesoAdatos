@@ -15,8 +15,7 @@ public class Empregado implements java.io.Serializable {
     private Date dataNacemento;
     private Character sexo;
 
-    public Empregado() {
-    }
+    public Empregado() {}
 
     public Empregado(String nss, String nome, String apelido1) {
         this(nss, nome, apelido1, null, null, null, null);
@@ -36,55 +35,42 @@ public class Empregado implements java.io.Serializable {
     public String getNss() {
         return this.nss;
     }
-
     public void setNss(String nss) {
         this.nss = nss;
     }
-
     public String getNome() {
         return this.nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public String getApelido1() {
         return this.apelido1;
     }
-
     public void setApelido1(String apelido1) {
         this.apelido1 = apelido1;
     }
-
     public String getApelido2() {
         return this.apelido2;
     }
-
     public void setApelido2(String apelido2) {
         this.apelido2 = apelido2;
     }
-
     public Double getSalario() {
         return this.salario;
     }
-
     public void setSalario(Double salario) {
         this.salario = salario;
     }
-
     public Date getDataNacemento() {
         return this.dataNacemento;
     }
-
     public void setDataNacemento(Date dataNacemento) {
         this.dataNacemento = dataNacemento;
     }
-
     public Character getSexo() {
         return this.sexo;
     }
-
     public void setSexo(Character sexo) {
         this.sexo = sexo;
     }
@@ -130,7 +116,6 @@ public class Empregado implements java.io.Serializable {
     public Set<Telefono> getTelefonos() {
         return telefonos;
     }
-
     public void setTelefonos(Set<Telefono> telefonos) {
         this.telefonos = telefonos;
     }
@@ -142,7 +127,6 @@ public class Empregado implements java.io.Serializable {
     public List<Familiar> getFamiliares() {
         return familiares;
     }
-
     public void setFamiliares(List<Familiar> familiares) {
         this.familiares = familiares;
     }
@@ -155,7 +139,6 @@ public class Empregado implements java.io.Serializable {
     public Collection<String> getAficiones() {
         return aficiones;
     }
-
     public void setAficiones(Collection<String> aficiones) {
         this.aficiones = aficiones;
     }
@@ -167,7 +150,6 @@ public class Empregado implements java.io.Serializable {
     public SortedMap<java.sql.Date, Double> getMapHorasExtra() {
         return mapHorasExtra;
     }
-
     public void setMapHorasExtra(SortedMap<java.sql.Date, Double> mapHorasExtra) {
         this.mapHorasExtra = mapHorasExtra;
     }
@@ -179,9 +161,30 @@ public class Empregado implements java.io.Serializable {
     public Enderezo getEnderezo() {
         return enderezo;
     }
-
     public void setEnderezo(Enderezo enderezo) {
         this.enderezo = enderezo;
+    }
+    // endregion
+
+    // region DEPARTAMENTO
+    private Departamento departamento;
+
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+    // endregion
+
+    // region VEHICULO
+    private Vehiculo vehiculo;
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
     }
     // endregion
 }

@@ -12,6 +12,7 @@ import org.hibernate.SessionFactory;
 import pojos.Departamento;
 import pojos.Empregado;
 import pojos.Familiar;
+import pojos.Vehiculo;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -217,6 +218,15 @@ public class OperacionesHB {
             }
         } else {
             System.err.println("ERROR. Empleado con nss " + nss + " no encontrado");
+        }
+    }
+
+    public void setVehiculoToEmpregado(Session s, String nssEmpregado, Vehiculo v) {
+        Empregado e = (Empregado) s.get(Empregado.class, nssEmpregado);
+
+        if (e != null) {
+            v.setPropietario(e);
+            e.setVehiculo(v);
         }
     }
 }
