@@ -27,6 +27,9 @@ public class Lecturas {
 
             opHb.viewHorasExtra(s, "12345678A");
 
+            opHb.viewProxectos(s, 2);
+            opHb.viewProxectos(s, 3);
+
             t.commit();
         } catch (HibernateException e) {
             t.rollback();

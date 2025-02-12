@@ -44,7 +44,6 @@ public class Departamento implements java.io.Serializable {
     /* OTROS MAPEOS */
     // Mapeo de los lugares como ibag de componentes
     private Collection<String> lugares = new ArrayList<>();
-
     public Collection<String> getLugares() {
         return lugares;
     }
@@ -54,11 +53,19 @@ public class Departamento implements java.io.Serializable {
 
     // Mapeo del Director
     private Empregado director;
-
     public Empregado getDirector() {
         return director;
     }
     public void setDirector(Empregado director) {
         this.director = director;
+    }
+
+    // Mapeo de los proxectos que controla
+    private Collection<Proxecto> proxectosControlados = new ArrayList<>();
+    public Collection<Proxecto> getProxectosControlados() {
+        return proxectosControlados;
+    }
+    public void setProxectosControlados(Collection<Proxecto> proxectosControlados) {
+        this.proxectosControlados = proxectosControlados;
     }
 }

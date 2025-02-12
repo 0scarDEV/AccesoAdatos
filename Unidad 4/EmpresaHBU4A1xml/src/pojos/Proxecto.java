@@ -42,4 +42,23 @@ public class Proxecto implements java.io.Serializable {
     public void setLugar(String lugar) {
         this.lugar = lugar;
     }
+
+    @Override public String toString() {
+        return "Proxecto{" +
+                "numProxecto=" + numProxecto +
+                ", nomeProxecto='" + nomeProxecto + '\'' +
+                ", lugar='" + lugar + '\'' +
+                ", departamentoControla=" + departamentoControla +
+                '}';
+    }
+
+    // region Mapeo del departamento
+    private Departamento departamentoControla;
+    public Departamento getDepartamentoControla() {
+        return departamentoControla;
+    }
+    public void setDepartamentoControla(Departamento departamentoControla) {
+        this.departamentoControla = departamentoControla;
+    }
+    // endregion
 }

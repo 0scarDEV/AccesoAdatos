@@ -14,5 +14,10 @@
         <property name="lugar" type="string">
             <column name="Lugar" length="25" not-null="true" />
         </property>
+
+        <!-- Mapeo del departamento que controla el proxecto -->
+        <many-to-one name="departamentoControla" class="pojos.Departamento" fetch="select">
+            <column name="Num_depart_controla" not-null="true"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

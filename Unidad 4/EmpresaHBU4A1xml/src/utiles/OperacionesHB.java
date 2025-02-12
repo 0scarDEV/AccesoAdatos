@@ -9,10 +9,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.ObjectNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import pojos.Departamento;
-import pojos.Empregado;
-import pojos.Familiar;
-import pojos.Vehiculo;
+import pojos.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -238,6 +235,18 @@ public class OperacionesHB {
 
         } else {
             System.err.println("O empregado con NSS" + nssEmpregado + " non existe.");
+        }
+    }
+
+    public void viewProxectos(Session s, int numDepartamento) {
+        try {
+            Departamento d = (Departamento) s.load(Departamento.class, numDepartamento);
+            System.out.println("Listando proxectos do departamento " + d);
+        for (Proxecto p : d.getProxectosControlados()) {
+            System.out.println(p);
+        }
+        } catch (HibernateException he) {
+            System.err.println("Error. No existe el departamento " + numDepartamento);
         }
     }
 }
