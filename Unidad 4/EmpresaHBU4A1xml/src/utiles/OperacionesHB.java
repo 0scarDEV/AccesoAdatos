@@ -225,8 +225,19 @@ public class OperacionesHB {
         Empregado e = (Empregado) s.get(Empregado.class, nssEmpregado);
 
         if (e != null) {
-            v.setPropietario(e);
-            e.setVehiculo(v);
+            if (e.getVehiculo() == null) {
+                v.setPropietario(e);
+                e.setVehiculo(v);
+                s.save(v);
+            } else {
+                e.getVehiculo().setModelo(v.getModelo());
+                e.getVehiculo().setMarca(v.getMarca());
+                e.getVehiculo().setMatricula(v.getMatricula());
+                e.getVehiculo().setDataCompra(v.getDataCompra());
+            }
+
+        } else {
+            System.err.println("O empregado con NSS" + nssEmpregado + " non existe.");
         }
     }
 }

@@ -6,7 +6,9 @@
     <class name="pojos.Vehiculo" table="VEHICULO" schema="dbo" catalog="EmpresaHB">
         <id name="nss" type="java.lang.String">
             <column name="NSS" length="15"/>
-            <generator class="foreign"/>
+            <generator class="foreign">
+                <param name="property">propietario</param>
+            </generator>
         </id>
         <!-- mapeo de las propiedades -->
         <property name="matricula" type="java.lang.String">

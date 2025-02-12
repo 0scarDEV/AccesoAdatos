@@ -54,7 +54,7 @@ public class Inserciones {
         }*/
 
         Empregado e = new Empregado("12345678O", "Oscar", "Pastoriza", "Otero", 2000.0, new Date(1999, 12, 27), 'M');
-        Vehiculo v = new Vehiculo("12345678O", "1061GVD", "Peugeot", "207", new Date(2010, 7, 17));
+        Vehiculo v = new Vehiculo("12345678O", "1061GVG", "Peugeot", "207", new Date(2010, 7, 17));
 
         e.setEnderezo(new Enderezo("Canibelos", "36930", "Bueu", "Pontevedra"));
         Familiar f = new Familiar("12345678V", "Cristina", "Pastoriza", "Otero", new Date(1967, 12, 27), "Tia", 'M');
@@ -71,6 +71,7 @@ public class Inserciones {
         } catch (HibernateException he) {
             t.rollback();
             System.err.println("Error al insertar el familiar.");
+            he.printStackTrace();
         }
 
         opHB.liberarRecursos();
