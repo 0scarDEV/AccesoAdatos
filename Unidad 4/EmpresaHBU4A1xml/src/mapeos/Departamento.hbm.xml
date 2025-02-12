@@ -19,5 +19,10 @@
             <key column="num_departamento" not-null="true"/>
             <element column="lugar" type="java.lang.String" not-null="true"/>
         </idbag>
+
+        <!-- Relación many to one con empleado, quien dirige el departamento -->
+        <many-to-one name="director" class="pojos.Empregado">
+            <column name="nssDirector" length="15"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

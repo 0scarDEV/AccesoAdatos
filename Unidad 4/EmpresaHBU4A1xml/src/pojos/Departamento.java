@@ -51,4 +51,14 @@ public class Departamento implements java.io.Serializable {
     public void setLugares(Collection<String> lugares) {
         this.lugares = lugares;
     }
+
+    // Mapeo del Director
+    private Empregado director;
+
+    public Empregado getDirector() {
+        return director;
+    }
+    public void setDirector(Empregado director) {
+        this.director = director;
+    }
 }
