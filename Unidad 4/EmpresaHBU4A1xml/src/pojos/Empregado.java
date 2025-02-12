@@ -187,4 +187,14 @@ public class Empregado implements java.io.Serializable {
         this.vehiculo = vehiculo;
     }
     // endregion
+
+    // region PROXECTOS QUE PARTICIPA
+    private Set<Proxecto> proxectosParticipa = new HashSet<>();
+    public Set<Proxecto> getProxectosParticipa() {
+        return proxectosParticipa;
+    }
+    public void setProxectosParticipa(Set<Proxecto> proxectosParticipa) {
+        this.proxectosParticipa = proxectosParticipa;
+    }
+    // endregion
 }
