@@ -21,11 +21,11 @@
         </many-to-one>
 
         <!-- Mapeo de los empregados que participan en el proxecto -->
-        <bag name="participantes" table="EMPREGADO_PROXECTO" fetch="select" lazy="true">
+        <bag name="participantes" table="EMPREGADO_PROXECTO" inverse="true" fetch="select" lazy="true">
             <key>
                 <column name="Num_proxecto" not-null="true"/>
             </key>
-            <many-to-many class="pojos.Empregado"/>
+            <many-to-many class="pojos.Empregado" column="NSS_Empregado"/>
         </bag>
     </class>
 </hibernate-mapping>

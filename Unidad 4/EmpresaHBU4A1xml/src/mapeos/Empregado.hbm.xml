@@ -115,11 +115,11 @@
         <one-to-one name="vehiculo" class="pojos.Vehiculo" cascade="all"/>
 
         <!-- Mapeo de la relación MANY to MANY con PROXECTO -->
-        <bag name="proxectosParticipa" table="EMPREGADO_PROXECTO" inverse="true" lazy="true" fetch="select">
+        <bag name="proxectosParticipa" table="EMPREGADO_PROXECTO" lazy="true" fetch="select">
             <key>
                 <column name="NSS_Empregado" not-null="true"/>
             </key>
-            <many-to-many class="pojos.Proxecto"/>
+            <many-to-many class="pojos.Proxecto" column="Num_proxecto"/>
         </bag>
     </class>
 </hibernate-mapping>
