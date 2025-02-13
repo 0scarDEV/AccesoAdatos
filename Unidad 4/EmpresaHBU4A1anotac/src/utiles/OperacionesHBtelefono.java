@@ -12,7 +12,7 @@ public class OperacionesHBtelefono extends OperacionesHB {
         super();
     }
 
-    public boolean setTelefonosEmpleado(Session s, String nss, HashSet<Telefono> telefonos) {
+    public boolean setTelefonosEmpleado(Session s, String nss, HashSet<String> telefonos) {
         boolean flagModificacion = false;
 
         try {

@@ -1,8 +1,6 @@
 package pojos;
 // Generated 23 ene. 2025 9:06:45 by Hibernate Tools 4.3.1
 
-import org.hibernate.annotations.ListIndexBase;
-
 import java.util.*;
 import javax.persistence.*;
 
@@ -34,17 +32,16 @@ public class Empregado implements java.io.Serializable {
     // region TELEFONO
     @ElementCollection
     @CollectionTable(name = "TELEFONO", joinColumns = @JoinColumn(name = "NSS"))
-    private Set<Telefono> telefonos = new HashSet<>();;
-
+    /*private Set<Telefono> telefonos = new HashSet<>();
     public Set<Telefono> getTelefonos() {
         return telefonos;
     }
 
     public void setTelefonos(Set<Telefono> telefonos) {
         this.telefonos = telefonos;
-    }
-    /* Mapeo de la colección de teléfonos como un componente
-    @Column(name="Numero")
+    }  */
+    /* Mapeo de la colección de teléfonos como un componente */
+    @Column(name = "Numero")
     private Set<String> telefonos;
 
     public Set<String> getTelefonos() {
@@ -54,12 +51,12 @@ public class Empregado implements java.io.Serializable {
     public void setTelefonos(Set<String> telefonos) {
         this.telefonos = telefonos;
     }
-    */
+
     // endregion TELEFONO
 
     // region FAMILIAR
     @ElementCollection
-    @CollectionTable(name="FAMILIAR", joinColumns = @JoinColumn(name = "NSS_Empregado"))
+    @CollectionTable(name = "FAMILIAR", joinColumns = @JoinColumn(name = "NSS_Empregado"))
     //@OrderColumn(name = "Numero")
     private List<Familiar> familiares = new ArrayList<>();
 
@@ -89,7 +86,7 @@ public class Empregado implements java.io.Serializable {
 
     // region HORAS EXTRA
     @ElementCollection @CollectionTable(name = "HORASEXTRA", joinColumns = @JoinColumn(name = "NSS_Empregado"))
-    @MapKeyColumn(name = "Data") @Column(name = "Horas", nullable = false) @OrderBy("Data")
+    @MapKeyColumn(name = "Data") @Column(name = "Horas", nullable = false) @org.hibernate.annotations.OrderBy(clause = "Data")
     private SortedMap<java.sql.Date, Double> mapHorasExtra = new TreeMap<>();
 
     public SortedMap<java.sql.Date, Double> getMapHorasExtra() {
@@ -104,19 +101,42 @@ public class Empregado implements java.io.Serializable {
     // region ENDEREZO
     @Embedded
     private Enderezo enderezo;
-
     public Enderezo getEnderezo() {
         return enderezo;
     }
-
     public void setEnderezo(Enderezo enderezo) {
         this.enderezo = enderezo;
     }
 // endregion
 
-    // EMPREGADO
-    public Empregado() {
+    // region VEHICULO
+    @OneToOne(mappedBy = "empregado", cascade = CascadeType.ALL)
+    private Vehiculo vehiculo;
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
     }
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+    // endregion
+
+    // region EMPREGADO_PROXECTO
+    @ManyToMany @JoinTable(name = "EMPREGADO_PROXECTO",
+            joinColumns = @JoinColumn(name = "NSS_Empregado"),
+            inverseJoinColumns = @JoinColumn(name = "Num_proxecto"))
+    private Set<Proxecto> proxectos = new LinkedHashSet<>();
+
+    public Set<Proxecto> getProxectos() {
+        return proxectos;
+    }
+    public void setProxectos(Set<Proxecto> proxectos) {
+        this.proxectos = proxectos;
+    }
+    // endregion
+
+    // EMPREGADO
+    public Empregado() {}
 
     public Empregado(String nss, String nome, String apelido1) {
         this(nss, nome, apelido1, null, null, null, null);
@@ -135,7 +155,6 @@ public class Empregado implements java.io.Serializable {
     public String getNss() {
         return this.nss;
     }
-
     public void setNss(String nss) {
         this.nss = nss;
     }
@@ -143,7 +162,6 @@ public class Empregado implements java.io.Serializable {
     public String getNome() {
         return this.nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -151,7 +169,6 @@ public class Empregado implements java.io.Serializable {
     public String getApelido1() {
         return this.apelido1;
     }
-
     public void setApelido1(String apelido1) {
         this.apelido1 = apelido1;
     }
@@ -159,7 +176,6 @@ public class Empregado implements java.io.Serializable {
     public String getApelido2() {
         return this.apelido2;
     }
-
     public void setApelido2(String apelido2) {
         this.apelido2 = apelido2;
     }
@@ -167,7 +183,6 @@ public class Empregado implements java.io.Serializable {
     public Double getSalario() {
         return this.salario;
     }
-
     public void setSalario(Double salario) {
         this.salario = salario;
     }
@@ -175,7 +190,6 @@ public class Empregado implements java.io.Serializable {
     public Date getDataNacemento() {
         return this.dataNacemento;
     }
-
     public void setDataNacemento(Date dataNacemento) {
         this.dataNacemento = dataNacemento;
     }
@@ -183,7 +197,6 @@ public class Empregado implements java.io.Serializable {
     public Character getSexo() {
         return this.sexo;
     }
-
     public void setSexo(Character sexo) {
         this.sexo = sexo;
     }

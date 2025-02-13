@@ -22,9 +22,9 @@ public class Modificaciones {
             System.out.println(opHb.modificarSalarioEmpleado(s,"12345678A", 2000));
 
             // TELEFONO
-            HashSet<Telefono> telefonos = new HashSet<>();
-            telefonos.add(new Telefono("666666666"));
-            telefonos.add(new Telefono("666666667"));
+            HashSet<String> telefonos = new HashSet<>();
+            telefonos.add("666666666");
+//            telefonos.add(new Telefono("666666667"));
             opHb.setTelefonosEmpleado(s, "12345678A", telefonos);
             opHb.removeTelefonoEmpleado(s, "12345678A", new Telefono("666666666"));
 
