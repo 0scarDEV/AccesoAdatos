@@ -12,6 +12,7 @@ import org.hibernate.SessionFactory;
 import pojos.Departamento;
 import pojos.Empregado;
 import pojos.Familiar;
+import pojos.Proxecto;
 
 import java.sql.Date;
 import java.util.HashSet;
@@ -218,5 +219,35 @@ public class OperacionesHB {
         } else {
             System.err.println("ERROR. Empleado con nss " + nss + " no encontrado");
         }
+    }
+
+
+    public void viewProxectos(Session s, int numDepartamento) {
+        try {
+            Departamento d = (Departamento) s.load(Departamento.class, numDepartamento);
+            System.out.println("Listando proxectos do departamento " + d);
+        for (Proxecto p : d.getProxectos()) {
+            System.out.println(p);
+        }
+        } catch (HibernateException he) {
+            System.err.println("Error. No existe el departamento " + numDepartamento);
+        }
+    }
+
+    public boolean asignarProxectoToEmpregado(Session s, String nssEmpregado, int numProxecto) {
+        Empregado e = (Empregado) s.get(Empregado.class, nssEmpregado);
+        Proxecto p = (Proxecto) s.get(Proxecto.class, numProxecto);
+
+        if (p == null || e == null) {
+            return false;
+        }
+
+        e.getProxectos().add(p);
+        //p.getEmpregados().add(e); // [JAIMITADA] lo interpreta como doble inserción
+
+        s.save(e);
+        s.save(p);
+
+        return true;
     }
 }

@@ -48,5 +48,6 @@ Contributor(s):
     <mapping class="pojos.Departamento"/>
     <mapping class="pojos.Proxecto"/>
     <mapping class="pojos.Empregado"/>
+    <mapping class="pojos.Vehiculo"/>
   </session-factory>
 </hibernate-configuration>

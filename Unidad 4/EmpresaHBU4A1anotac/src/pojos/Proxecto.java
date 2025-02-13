@@ -15,8 +15,7 @@ import java.util.Set;
         uniqueConstraints = @UniqueConstraint(columnNames = "Nome_proxecto")
 )
 public class Proxecto implements java.io.Serializable {
-    @Id
-    @Column(name = "Num_proxecto", unique = true, nullable = false)
+    @Id @Column(name = "Num_proxecto", unique = true, nullable = false)
     private int numProxecto;
     @Column(name = "Nome_proxecto", unique = true, nullable = false, length = 25)
     private String nomeProxecto;
@@ -61,8 +60,8 @@ public class Proxecto implements java.io.Serializable {
     // region EMPREGADO_PROXECTO
     @ManyToMany @JoinTable(name = "EMPREGADO_PROXECTO",
             joinColumns = @JoinColumn(name = "Num_proxecto"),
-            inverseJoinColumns = @JoinColumn(name = "NSS_Empregado"))
-    private Set<Empregado> empregados = new LinkedHashSet<>();
+            inverseJoinColumns = @JoinColumn(name = "NSS_Empregado")
+    ) private Set<Empregado> empregados = new LinkedHashSet<>();
 
     public Set<Empregado> getEmpregados() {
         return empregados;
@@ -73,8 +72,9 @@ public class Proxecto implements java.io.Serializable {
     }
     // endregion
 
-    // REGION DEPARTAMENTO
-    @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "Num_depart_controla")
+    // region DEPARTAMENTO
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "Num_depart_controla", nullable = false)
     private Departamento numDepartControla;
 
     public Departamento getNumDepartControla() {

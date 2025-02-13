@@ -124,8 +124,8 @@ public class Empregado implements java.io.Serializable {
     // region EMPREGADO_PROXECTO
     @ManyToMany @JoinTable(name = "EMPREGADO_PROXECTO",
             joinColumns = @JoinColumn(name = "NSS_Empregado"),
-            inverseJoinColumns = @JoinColumn(name = "Num_proxecto"))
-    private Set<Proxecto> proxectos = new LinkedHashSet<>();
+            inverseJoinColumns = @JoinColumn(name = "Num_proxecto")
+    ) private Set<Proxecto> proxectos = new LinkedHashSet<>();
 
     public Set<Proxecto> getProxectos() {
         return proxectos;

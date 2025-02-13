@@ -45,7 +45,8 @@ public class Departamento implements java.io.Serializable {
     }
 
     /* Mapeo de los proxectos */
-    @OneToMany(mappedBy = "numDepartControla") private Set<Proxecto> proxectos = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "numDepartControla", fetch = FetchType.LAZY)
+    private Set<Proxecto> proxectos = new LinkedHashSet<>();
 
     public Set<Proxecto> getProxectos() {
         return proxectos;
