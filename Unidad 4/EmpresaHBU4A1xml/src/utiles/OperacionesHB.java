@@ -249,4 +249,20 @@ public class OperacionesHB {
             System.err.println("Error. No existe el departamento " + numDepartamento);
         }
     }
+
+    public boolean asignarProxectoToEmpregado(Session s, String nssEmpregado, int numProxecto) {
+        Empregado e = (Empregado) s.get(Empregado.class, nssEmpregado);
+        Proxecto p = (Proxecto) s.get(Proxecto.class, numProxecto);
+
+        if (p == null || e == null) {
+            return false;
+        }
+
+        e.getProxectosParticipa().add(p);
+        p.getParticipantes().add(e);
+
+        s.save(e);
+
+        return true;
+    }
 }

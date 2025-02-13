@@ -15,23 +15,31 @@ public class Modificaciones {
         Session s = opHb.getSession();
         Transaction t = s.beginTransaction();
 
+        String nssEmpregado = "12345678A";
+
+        HashSet<Telefono> telefonos = new HashSet<>();
+        telefonos.add(new Telefono("123456789"));
+        telefonos.add(new Telefono("123456788"));
         try {
             //System.out.println(opHb.modificarSalarioEmpleado("12345678B", 2000));
 
-            HashSet<Telefono> telefonos = new HashSet<>();
-            telefonos.add(new Telefono("123456789"));
-            telefonos.add(new Telefono("123456788"));
-            //opHb.setTelefonosEmpleado(s, "12345678A", telefonos);
-            //opHb.removeTelefonoEmpleado(s, "12345678A", new Telefono("123456788"));
+            //opHb.setTelefonosEmpleado(s, nssEmpregado, telefonos);
+            //opHb.removeTelefonoEmpleado(s, nssEmpregado, new Telefono("123456788"));
 
-            // opHb.addAficion(s, "12345678A", "Futbol");
-            System.out.println("Aficion añadida");
+            // opHb.addAficion(s, nssEmpregado, "Futbol");
+            //System.out.println("Aficion añadida");
 
             //opHb.addLugar(s, 1, "Coruña");
-            System.out.println("Lugar añadido");
+            //System.out.println("Lugar añadido");
 
-            opHb.addHoraExtra(s, "12345678A", LocalDate.of(2025, 2, 6), 1.5);
-            System.out.println("Horas extra añadidas correctamente.");
+            // opHb.addHoraExtra(s, nssEmpregado, LocalDate.of(2025, 2, 6), 1.5);
+            //System.out.println("Horas extra añadidas correctamente.");
+
+            if (opHb.asignarProxectoToEmpregado(s, nssEmpregado, 1)) {
+                System.out.println("Proxecto 1 asignado correctamente ao empregado " + nssEmpregado);
+            } else {
+                System.err.println("Error al asignar el proxecto.");
+            }
 
             t.commit();
         } catch (HibernateException e) {
