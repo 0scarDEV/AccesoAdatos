@@ -19,5 +19,18 @@
             <key column="num_departamento" not-null="true"/>
             <element column="lugar" type="java.lang.String" not-null="true"/>
         </idbag>
+
+        <!-- Relación many to one con empleado, quien dirige el departamento -->
+        <many-to-one name="director" class="pojos.Empregado">
+            <column name="nssDirector" length="15"/>
+        </many-to-one>
+
+        <!-- Relación one to many con proxecto, los proxectos que controla -->
+        <bag name="proxectosControlados" table="PROXECTO" inverse="true" lazy="true">
+            <key>
+                <column name="Num_depart_controla"/>
+            </key>
+            <one-to-many class="pojos.Proxecto"/>
+        </bag>
     </class>
 </hibernate-mapping>

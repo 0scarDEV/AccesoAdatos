@@ -3,7 +3,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 23 ene. 2025 9:18:23 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="pojos.Empregado" table="EMPREGADO" schema="dbo" catalog="EmpresaHB">
+    <class name="pojos.Empregado" table="EMPREGADO" schema="dbo" catalog="EmpresaHB" dynamic-update="true">
         <id name="nss" type="string">
             <column name="NSS" length="15"/>
             <generator class="assigned"/>
@@ -43,7 +43,7 @@
             </composite-element>
         </set>
 
-        <!--B Mapeo de telefono (nuemro e infromacion) como set de componentes
+        <!--B Mapeo de telefono (nuemro e infromacion) como mapa
         <map name="telefonos" table="TELEFONO">
             <key column="NSS" not-null="true"/>
             <map-key type="string" column="Numero"/>

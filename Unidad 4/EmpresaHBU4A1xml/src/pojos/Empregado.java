@@ -189,11 +189,11 @@ public class Empregado implements java.io.Serializable {
     // endregion
 
     // region PROXECTOS QUE PARTICIPA
-    private Set<Proxecto> proxectosParticipa = new HashSet<>();
-    public Set<Proxecto> getProxectosParticipa() {
+    private Collection<Proxecto> proxectosParticipa = new ArrayList<>();
+    public Collection<Proxecto> getProxectosParticipa() {
         return proxectosParticipa;
     }
-    public void setProxectosParticipa(Set<Proxecto> proxectosParticipa) {
+    public void setProxectosParticipa(Collection<Proxecto> proxectosParticipa) {
         this.proxectosParticipa = proxectosParticipa;
     }
     // endregion

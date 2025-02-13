@@ -26,8 +26,6 @@
 
         <!-- mapeo de las relaciones -->
         <!-- mapeo del empleado que tiene el vehiculo -->
-        <one-to-one name="propietario" class="pojos.Empregado" constrained="true">
-
-        </one-to-one>
+        <one-to-one name="propietario" class="pojos.Empregado" constrained="true"/>
     </class>
 </hibernate-mapping>
