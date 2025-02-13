@@ -262,6 +262,7 @@ public class OperacionesHB {
         p.getParticipantes().add(e);
 
         s.save(e);
+        s.save(p);
 
         return true;
     }
