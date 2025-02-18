@@ -19,6 +19,5 @@
         <property name="lugar" type="string">
             <column name="Lugar" length="25" />
         </property>
-       
     </class>
 </hibernate-mapping>
