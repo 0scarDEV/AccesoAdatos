@@ -7,6 +7,7 @@
 package empresahb2_feb25;
 
 import java.text.SimpleDateFormat;
+
 import org.hibernate.Session;
 
 public class ConsultasHB {
@@ -21,6 +22,4 @@ public class ConsultasHB {
         sesion.close();
     }
 
-   
-    
 }

@@ -1,15 +1,13 @@
 package POJOS;
 
-
 public class Proxecto implements java.io.Serializable {
-
-    private int numProxecto; 
+    private int numProxecto;
     private String nomeProxecto;
     private String lugar;
-   
+
     public Proxecto() {
     }
- 
+
     public int getNumProxecto() {
         return this.numProxecto;
     }
@@ -17,7 +15,7 @@ public class Proxecto implements java.io.Serializable {
     public void setNumProxecto(int numProxecto) {
         this.numProxecto = numProxecto;
     }
- 
+
 
     public String getNomeProxecto() {
         return this.nomeProxecto;
@@ -34,5 +32,5 @@ public class Proxecto implements java.io.Serializable {
     public void setLugar(String lugar) {
         this.lugar = lugar;
     }
- 
+
 }

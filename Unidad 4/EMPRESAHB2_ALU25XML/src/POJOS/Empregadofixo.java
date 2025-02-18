@@ -1,23 +1,16 @@
 package POJOS;
 
-
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.SortedMap;
-
 
 public class Empregadofixo extends Empregado implements java.io.Serializable {
-
-
     private Double salario;
     private Date dataAlta;
     private String categoria;
-   
 
     public Empregadofixo() {
     }
-  public Empregadofixo(String nss) {
+
+    public Empregadofixo(String nss) {
         super(nss);
     }
 

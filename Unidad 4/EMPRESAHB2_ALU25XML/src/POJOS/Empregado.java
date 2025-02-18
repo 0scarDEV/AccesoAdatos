@@ -3,7 +3,6 @@ package POJOS;
 import java.util.Date;
 
 public class Empregado implements java.io.Serializable {
-
     private String nss;
     private String nome;
     private String apelido1;

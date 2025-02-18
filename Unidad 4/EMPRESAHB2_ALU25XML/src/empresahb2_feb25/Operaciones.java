@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package empresahb2_feb25;
 
 import org.hibernate.Session;
 
 /**
- *
  * @author usuario
  */
 public class Operaciones {
@@ -22,7 +20,4 @@ public class Operaciones {
             System.out.println("ERROR");
         }
     }
-
-   
-    
 }

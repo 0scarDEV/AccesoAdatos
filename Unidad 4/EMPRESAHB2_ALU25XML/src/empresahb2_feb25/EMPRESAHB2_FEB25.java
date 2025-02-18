@@ -6,13 +6,10 @@
 package empresahb2_feb25;
 
 import java.text.SimpleDateFormat;
-
 /**
- *
  * @author usuario
  */
 public class EMPRESAHB2_FEB25 {
-
     /**
      * @param args the command line arguments
      */
