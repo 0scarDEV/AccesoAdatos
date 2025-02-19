@@ -56,6 +56,14 @@
             <one-to-many class="POJOS.Empregado"/>
         </set>
 
+        <!-- Mapeo de la relación con proxecto mediante una tabla intermedia -->
+        <set name="proxectos" fetch="select" table="EMPREGADO_PROXECTO">
+            <key>
+                <column name="NumProxecto" not-null="true"/>
+            </key>
+            <one-to-many class="POJOS.EmpregadoProxecto"/>
+        </set>
+
         <!-- Mapeo de la herencia hacia EmpregadoFixo -->
         <joined-subclass name="POJOS.Empregadofixo" table="EMPREGADOFIXO">
             <key>

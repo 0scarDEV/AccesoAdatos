@@ -19,9 +19,9 @@ public class Empregado implements java.io.Serializable {
     private String provincia;
     private Empregado supervisor;
     private Set<Empregado> empregadosSupervisados = new HashSet<>();
+    private Set<EmpregadoProxecto> proxectos = new HashSet<>();
 
-    public Empregado() {
-    }
+    public Empregado() {}
 
     public Empregado(String nss) {
         this.nss = nss;
@@ -143,5 +143,13 @@ public class Empregado implements java.io.Serializable {
 
     public void setEmpregadosSupervisados(Set<Empregado> empregadosSupervisados) {
         this.empregadosSupervisados = empregadosSupervisados;
+    }
+
+    public Set<EmpregadoProxecto> getProxectos() {
+        return proxectos;
+    }
+
+    public void setProxectos(Set<EmpregadoProxecto> proxectos) {
+        this.proxectos = proxectos;
     }
 }

@@ -1,12 +1,15 @@
 package POJOS;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Proxecto implements java.io.Serializable {
     private int numProxecto;
     private String nomeProxecto;
     private String lugar;
+    private Collection<EmpregadoProxecto> empregados = new ArrayList<>();
 
-    public Proxecto() {
-    }
+    public Proxecto() {}
 
     public int getNumProxecto() {
         return this.numProxecto;
@@ -15,7 +18,6 @@ public class Proxecto implements java.io.Serializable {
     public void setNumProxecto(int numProxecto) {
         this.numProxecto = numProxecto;
     }
-
 
     public String getNomeProxecto() {
         return this.nomeProxecto;
@@ -33,4 +35,11 @@ public class Proxecto implements java.io.Serializable {
         this.lugar = lugar;
     }
 
+    public Collection<EmpregadoProxecto> getEmpregados() {
+        return empregados;
+    }
+
+    public void setEmpregados(Collection<EmpregadoProxecto> empregados) {
+        this.empregados = empregados;
+    }
 }

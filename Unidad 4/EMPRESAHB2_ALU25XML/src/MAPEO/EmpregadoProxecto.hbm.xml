@@ -15,7 +15,5 @@
          <property name="horas" type="java.lang.Integer">
             <column name="Horas" />
         </property>
-        
-       
     </class>
 </hibernate-mapping>
