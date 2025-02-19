@@ -16,7 +16,7 @@
             <column name="Lugar" length="25" not-null="true" />
         </property>
 
-        <!-- Mapeo de la relación con proxecto mediante una tabla intermedia -->
+        <!-- Mapeo de la relación con empregado mediante una tabla intermedia -->
         <bag name="empregados" table="EMPREGADO_PROXECTO" fetch="select" inverse="true">
             <key>
                 <column name="NSSEmpregado" length="15" not-null="true"/>
