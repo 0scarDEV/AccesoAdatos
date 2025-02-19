@@ -15,5 +15,13 @@
          <property name="horas" type="java.lang.Integer">
             <column name="Horas" />
         </property>
+
+        <many-to-one name="empregado" class="POJOS.Empregado">
+            <column name="NSSEmpregado" length="15" not-null="true"/>
+        </many-to-one>
+
+        <many-to-one name="proxecto" class="POJOS.Proxecto">
+            <column name="NumProxecto" not-null="true"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>
