@@ -43,6 +43,19 @@
             <column length="1" name="Sexo"/>
         </property>
 
+        <!-- Mapeo del supervisor -->
+        <many-to-one name="supervisor" class="POJOS.Empregado" fetch="select">
+            <column name="NSSSupervisa" length="15"/>
+        </many-to-one>
+
+        <!-- Mapeo de los supervisados -->
+        <set name="empregadosSupervisados" table="EMPREGADO" lazy="true" inverse="true">
+            <key>
+                <column name="NSS" length="15" not-null="true"/>
+            </key>
+            <one-to-many class="POJOS.Empregado"/>
+        </set>
+
         <!-- Mapeo de la herencia hacia EmpregadoFixo -->
         <joined-subclass name="POJOS.Empregadofixo" table="EMPREGADOFIXO">
             <key>

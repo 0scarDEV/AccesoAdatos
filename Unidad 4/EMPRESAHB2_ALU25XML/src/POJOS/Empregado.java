@@ -1,6 +1,8 @@
 package POJOS;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Empregado implements java.io.Serializable {
     private String nss;
@@ -15,6 +17,8 @@ public class Empregado implements java.io.Serializable {
     private String cp;
     private String localidade;
     private String provincia;
+    private Empregado supervisor;
+    private Set<Empregado> empregadosSupervisados = new HashSet<>();
 
     public Empregado() {
     }
@@ -125,4 +129,19 @@ public class Empregado implements java.io.Serializable {
         this.provincia = provincia;
     }
 
+    public Empregado getSupervisor() {
+        return supervisor;
+    }
+
+    public void setSupervisor(Empregado supervisor) {
+        this.supervisor = supervisor;
+    }
+
+    public Set<Empregado> getEmpregadosSupervisados() {
+        return empregadosSupervisados;
+    }
+
+    public void setEmpregadosSupervisados(Set<Empregado> empregadosSupervisados) {
+        this.empregadosSupervisados = empregadosSupervisados;
+    }
 }
