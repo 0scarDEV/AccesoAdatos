@@ -57,7 +57,7 @@
         </set>
 
         <!-- Mapeo de la relación con proxecto mediante una tabla intermedia -->
-        <set name="proxectos" fetch="select" table="EMPREGADO_PROXECTO">
+        <set name="proxectos" fetch="select" table="EMPREGADO_PROXECTO" inverse="true">
             <key>
                 <column name="NumProxecto" not-null="true"/>
             </key>

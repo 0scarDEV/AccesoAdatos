@@ -17,7 +17,7 @@
         </property>
 
         <!-- Mapeo de la relación con proxecto mediante una tabla intermedia -->
-        <bag name="empregados" table="EMPREGADO_PROXECTO" fetch="select">
+        <bag name="empregados" table="EMPREGADO_PROXECTO" fetch="select" inverse="true">
             <key>
                 <column name="NSSEmpregado" length="15" not-null="true"/>
             </key>
