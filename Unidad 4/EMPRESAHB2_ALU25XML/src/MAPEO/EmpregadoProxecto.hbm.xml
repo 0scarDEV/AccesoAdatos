@@ -16,11 +16,13 @@
             <column name="Horas" />
         </property>
 
-        <many-to-one name="empregado" class="POJOS.Empregado">
+        <!-- Hacemos que sea accesible el empregado desde EmpregadoProxecto -->
+        <many-to-one name="empregado" class="POJOS.Empregado" insert="false" update="false">
             <column name="NSSEmpregado" length="15" not-null="true"/>
         </many-to-one>
 
-        <many-to-one name="proxecto" class="POJOS.Proxecto">
+        <!--  Hacemos que sea accesible el proyecto desde EmpregadoProxecto -->
+        <many-to-one name="proxecto" class="POJOS.Proxecto" insert="false" update="false">
             <column name="NumProxecto" not-null="true"/>
         </many-to-one>
     </class>

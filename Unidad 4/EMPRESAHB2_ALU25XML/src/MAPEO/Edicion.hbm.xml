@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 09-feb-2023 8:57:24 by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
     <class name="POJOS.Edicion" table="EDICION" schema="dbo" catalog="EMPRESAHB2_25">
         <composite-id name="id" class="POJOS.EdicionId">
@@ -12,16 +11,15 @@
                 <column name="Numero" />
             </key-property>
         </composite-id>
-      
+
         <property name="data" type="date">
-            <column name="Data" length="10" />
+            <column name="Data" length="10"/>
         </property>
         <property name="lugar" type="string">
-            <column name="Lugar" length="25" />
+            <column name="Lugar" length="25"/>
         </property>
 
         <!-- Mapeo de la relación de muchos a uno con Curso -->
-        <!-- update="false" insert="false" hace que no se actualice ni inserte en la tabla Curso, lo usamos porque existe un EdicionID -->
         <many-to-one name="curso" class="POJOS.Curso" update="false" insert="false">
             <column name="Codigo" not-null="true"/>
         </many-to-one>
