@@ -19,5 +19,16 @@
         <property name="lugar" type="string">
             <column name="Lugar" length="25" />
         </property>
+
+        <!-- Mapeo de la relación de muchos a uno con Curso -->
+        <!-- update="false" insert="false" hace que no se actualice ni inserte en la tabla Curso, lo usamos porque existe un EdicionID -->
+        <many-to-one name="curso" class="POJOS.Curso" update="false" insert="false">
+            <column name="Codigo" not-null="true"/>
+        </many-to-one>
+
+        <!-- Mapeo de la relación muchos a uno con Profesor -->
+        <many-to-one name="profesor" class="POJOS.Empregadofixo" fetch="select">
+            <column name="Profesor" length="15" not-null="true"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

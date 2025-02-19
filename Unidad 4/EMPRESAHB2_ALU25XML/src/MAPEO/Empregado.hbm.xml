@@ -57,6 +57,14 @@
             <property name="categoria" type="string">
                 <column length="20" name="Categoria"/>
             </property>
+
+            <!-- Mapeo de la relación uno a muchos con Edicion -->
+            <set name="edicions" table="EDICION" lazy="true" inverse="true">
+                <key>
+                    <column name="Profesor" length="15" not-null="true"/>
+                </key>
+                <one-to-many class="POJOS.Edicion"/>
+            </set>
         </joined-subclass>
 
         <!-- Mapeo de la herencia hacia EmpregadoTemporal -->

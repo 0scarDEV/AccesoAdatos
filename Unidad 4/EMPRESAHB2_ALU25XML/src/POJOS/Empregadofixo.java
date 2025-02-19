@@ -1,11 +1,14 @@
 package POJOS;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Empregadofixo extends Empregado implements java.io.Serializable {
     private Double salario;
     private Date dataAlta;
     private String categoria;
+    private Set<Edicion> edicions = new HashSet<>();
 
     public Empregadofixo() {
     }
@@ -47,5 +50,13 @@ public class Empregadofixo extends Empregado implements java.io.Serializable {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public Set<Edicion> getEdicions() {
+        return edicions;
+    }
+
+    public void setEdicions(Set<Edicion> edicions) {
+        this.edicions = edicions;
     }
 }

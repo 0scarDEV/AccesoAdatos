@@ -2,12 +2,12 @@ package POJOS;
 
 import java.util.Date;
 
-/**
- * */
 public class Edicion implements java.io.Serializable {
     private EdicionId id;
     private Date data;
     private String lugar;
+    private Curso curso;
+    private Empregadofixo profesor;
 
     public Edicion() {
     }
@@ -34,5 +34,21 @@ public class Edicion implements java.io.Serializable {
 
     public void setLugar(String lugar) {
         this.lugar = lugar;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public Empregadofixo getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(Empregadofixo profesor) {
+        this.profesor = profesor;
     }
 }

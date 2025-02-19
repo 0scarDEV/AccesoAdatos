@@ -16,7 +16,7 @@
         </property>
 
         <!-- Mapeo de las ediciones de un curso -->
-        <list name="ediciones" table="EDICION" cascade="all">
+        <list name="ediciones" table="EDICION" cascade="all,delete-orphan">
             <!-- Clave foránea de EDICION a CURSO -->
             <key column="Codigo" not-null="true"/>
             <!-- Clave primaria que identifica a cada CURSO de una EDICION -->
