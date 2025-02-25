@@ -15,15 +15,15 @@
          <property name="horas" type="java.lang.Integer">
             <column name="Horas" />
         </property>
-
-        <!-- Hacemos que sea accesible el empregado desde EmpregadoProxecto -->
-        <many-to-one name="empregado" class="POJOS.Empregado" insert="false" update="false">
-            <column name="NSSEmpregado" length="15" not-null="true"/>
+        <!--mapeo de las relaciones -->
+        <!--el empleado que trabaja en un proyecto-->
+        <many-to-one name="empregado" class="POJOS.Empregado" update="false" insert="false" fetch="select">
+            <column name="NSSEmpregado" length="15" not-null="true" />
         </many-to-one>
-
-        <!--  Hacemos que sea accesible el proyecto desde EmpregadoProxecto -->
-        <many-to-one name="proxecto" class="POJOS.Proxecto" insert="false" update="false">
-            <column name="NumProxecto" not-null="true"/>
+        <!-- el proyecto que trabaja un empleado-->
+        <many-to-one name="proxecto" class="POJOS.Proxecto" update="false" insert="false" fetch="select">
+            <column name="NumProxecto" not-null="true" />
         </many-to-one>
+       
     </class>
 </hibernate-mapping>

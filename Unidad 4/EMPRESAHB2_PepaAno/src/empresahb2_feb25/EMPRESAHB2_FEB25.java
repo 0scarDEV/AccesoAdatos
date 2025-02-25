@@ -5,6 +5,8 @@
  */
 package empresahb2_feb25;
 
+import org.hibernate.Session;
+
 import java.text.SimpleDateFormat;
 /**
  * @author usuario
@@ -17,6 +19,10 @@ public class EMPRESAHB2_FEB25 {
 
     public static void main(String[] args) {
         Operaciones.conectarHibernate();
+
+        Session s = Operaciones.getSession();
+        Operaciones.visualizarEmpregados(s, "Fixo");
+
 
         System.exit(0);
     }

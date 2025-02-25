@@ -5,7 +5,10 @@
  */
 package empresahb2_feb25;
 
+import POJOS.Empregado;
 import org.hibernate.Session;
+
+import java.util.List;
 
 /**
  * @author usuario
@@ -19,5 +22,16 @@ public class Operaciones {
         } else {
             System.out.println("ERROR");
         }
+    }
+
+    public static void visualizarEmpregados(Session s, String tipoEmpregado) {
+        List<Empregado> empregados = s.createQuery("from Empregado where tipo = '" + tipoEmpregado + "'").list();
+        for (Empregado empregado : empregados) {
+            System.out.println(empregado.getNome() + " " + empregado.getApelido1() + " " + empregado.getApelido2());
+        }
+    }
+
+    public static Session getSession() {
+        return HibernateUtil.getSessionFactory().openSession();
     }
 }

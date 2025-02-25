@@ -23,6 +23,10 @@
         <property name="dataCompra" type="date">
             <column name="DataCompra" length="10" />
         </property>
-                 
+        <!-- mapeo de las relaciones-->
+        <!-- mapeo del empleado que tiene el vehiculo-->
+        <one-to-one name="empregado" class="POJOS.Empregado" constrained="true">
+            
+        </one-to-one>
     </class>
 </hibernate-mapping>
