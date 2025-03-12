@@ -25,7 +25,7 @@ public class Inserciones {
         Session s = opHB.getSession();
         Transaction t = s.beginTransaction();
 
-        /*
+
         try {
             Empregado e = new Empregado("87654321A", "Vipo", "Rua");
         if (opHB.insertarEmpregado(opHB.getSession(), e)) {
@@ -33,7 +33,7 @@ public class Inserciones {
         } else {
             System.out.println("Error al insertar");
         }
-
+/*
         Departamento d = new Departamento("PRUEBA3");
         if (opHB.insertarDepartamento(opHB.getSession(), d)) {
             System.out.println("Departamento " + d + " insertado correctamente.");
@@ -47,12 +47,13 @@ public class Inserciones {
         } else {
             System.out.println("Error al insertar");
         }
-            transaction.commit();
+        */
+            t.commit();
         } catch (HibernateException e) {
-            transaction.rollback();
+            t.rollback();
             System.out.println("Error al insertar empleado o departamento");
-        }*/
-
+        }
+/*
         Empregado e = new Empregado("12345678O", "Oscar", "Pastoriza", "Otero", 2000.0, new Date(1999, 12, 27), 'M');
         Vehiculo v = new Vehiculo("12345678O", "1061GVG", "Peugeot", "207", new Date(2010, 7, 17));
 
@@ -73,7 +74,7 @@ public class Inserciones {
             System.err.println("Error al insertar el familiar.");
             he.printStackTrace();
         }
-
+*/
         opHB.liberarRecursos();
         System.exit(0);
     }

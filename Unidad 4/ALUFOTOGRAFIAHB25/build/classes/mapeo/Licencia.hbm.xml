@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Óscar Fernández Pastoriza - 53862191D -->
+
+<hibernate-mapping>
+    <class name="pojos.Licencia" table="Licencia" schema="dbo" catalog="FOTOGRAFIAHB25" optimistic-lock="version">
+        <id name="idFotografo" type="int">
+            <column name="IdFotografo" />
+            <generator class="foreign">
+                <param name="property">fotografo</param>
+            </generator>
+        </id>       
+        <property name="numeroLicencia" type="string">
+            <column name="NumeroLicencia" length="15" not-null="true" unique="true" />
+        </property>
+        <property name="fechaExpedicion" type="date">
+            <column name="FechaExpedicion" length="10" not-null="true" />
+        </property>
+        <property name="fechaVencimiento" type="date">
+            <column name="FechaVencimiento" length="10" />
+        </property>
+
+        <!-- Mapeo de la relación one2one con Fotografo -->
+        <one-to-one name="fotografo" class="pojos.Fotografo" constrained="true"/>
+    </class>
+</hibernate-mapping>

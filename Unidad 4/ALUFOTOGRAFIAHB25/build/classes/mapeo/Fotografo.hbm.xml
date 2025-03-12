@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Óscar Fernández Pastoriza - 53862191D -->
+
+<hibernate-mapping>
+    <class name="pojos.Fotografo" table="Fotografo" schema="dbo" catalog="FOTOGRAFIAHB25" dynamic-update="true">
+        <id name="idFotografo" type="int">
+            <column name="IdFotografo"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="100" not-null="true"/>
+        </property>
+        <property name="apellidos" type="string">
+            <column name="Apellidos" length="100" not-null="true"/>
+        </property>
+        <property name="seudonimo" type="string">
+            <column name="Seudonimo" length="50" not-null="true" unique="true"/>
+        </property>
+
+        <!-- Mapeo del contacto del Fotógrafo como un componente a parte, Contacto -->
+        <component name="contacto" class="pojos.Contacto">
+            <property name="direccion" type="string">
+                <column name="Direccion" length="150"/>
+            </property>
+            <property name="email" type="string">
+                <column name="Email" length="150"/>
+            </property>
+            <property name="telefonoFijo" type="string">
+                <column name="TelefonoFijo" length="20"/>
+            </property>
+            <property name="telefonoMovil" type="string">
+                <column name="TelefonoMovil" length="20"/>
+            </property>
+        </component>
+
+        <!-- Mapeo de sus fotografías -->
+        <bag name="fotografias" table="FOTOGRAFIA" fetch="select">
+            <key>
+                <column name="IdFotografo" not-null="true"/>
+            </key>
+            <one-to-many class="pojos.Fotografia"/>
+        </bag>
+
+        <!-- Mapeo de sus materiales -->
+        <list name="materiales" table="MATERIAL" fetch="select" cascade="all">
+            <key>
+                <column name="IdFotografo" not-null="true"/>
+            </key>
+            <list-index column="Numero" base="1"/>
+            <composite-element class="pojos.Material">
+                <property name="numeroSerie" type="java.lang.String" unique="true" not-null="true" length="50"/>
+                <property name="material" type="java.lang.String" length="50"/>
+                <property name="marca" type="java.lang.String" length="50"/>
+                <property name="modelo" type="java.lang.String" length="50"/>
+            </composite-element>
+        </list>
+
+        <!-- Mapeo de los eventos a los que asiste -->
+        <set name="eventosAsistidos" table="FotografoEvento" fetch="select">
+            <key>
+                <column name="IdFotografo" not-null="true"/>
+            </key>
+            <many-to-many class="pojos.Evento" column="IdEvento"/>
+        </set>
+
+        <!-- Mapeo de la relación one2one con Licencia -->
+        <one-to-one name="licencia" class="pojos.Licencia" cascade="all"/>
+
+        <!-- Mapeo de los idiomas -->
+        <map name="idiomas" table="Idioma">
+            <key>
+                <column name="IdFotografo" not-null="true"/>
+            </key>
+            <map-key type="java.lang.String" column="Idioma" length="30"/>
+            <element length="30" type="java.lang.String" column="nivel"/>
+        </map>
+
+        <!-- Mapeo de su influencer -->
+        <many-to-one name="influencer" class="pojos.Fotografo" fetch="select">
+            <column name="idinfluencer" not-null="false"/>
+        </many-to-one>
+
+        <!-- Mapeo de los influenciados -->
+        <set name="influenciados" table="Fotografo" fetch="select" inverse="true" lazy="true">
+            <key>
+                <column name="IdInfluencer" not-null="false"/>
+            </key>
+            <one-to-many class="pojos.Fotografo"/>
+        </set>
+    </class>
+</hibernate-mapping>
